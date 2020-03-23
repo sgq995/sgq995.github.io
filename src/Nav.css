@@ -5,18 +5,23 @@
     /* background-color: var(--bg-primary); */
 }
 
+.navbar-content {
+    display: flex;
+}
+
 .navbar-nav {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
     height: 100%;
+    max-width: 800px;
 }
 
 .nav-item {
-    margin-left: 1rem;
+    margin-right: 1.25rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

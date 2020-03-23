@@ -1,17 +1,19 @@
 import React from 'react';
 
+import MenuIcon from './icon-menu.svg';
 import './Nav.css';
 
 function Nav() {
   const items = [
     'Blog',
-    'Portafolio',
+    // 'Portafolio',
+    'Projects',
     'About me',
     'Contact',
     'Test'
   ];
   
-  const navItem = (text, link) => {
+  const makeNavItem = (text, link) => {
     return (
       <li className="nav-item" key={text.toLowerCase()}>
         <a href={link ? link : '#'} className="nav-link">{text}</a>
@@ -22,7 +24,12 @@ function Nav() {
   return (
     <nav className="navbar">
       <ul className="navbar-nav">
-        {items.map(item => navItem(item))}
+        <li className="nav-item" key="burger">
+          <a href="#" className="nav-link">
+            <img src={MenuIcon} alt="burger" width="32" />
+          </a>
+        </li>
+        {items.map(item => makeNavItem(item))}
       </ul>
     </nav>
   );
