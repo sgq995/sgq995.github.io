@@ -3,12 +3,17 @@ import React from 'react';
 import './App.css';
 
 import Nav from './Nav';
+import Content from './Content';
 
 function App() {
   return (
     <React.Fragment>
-      <Nav />
-      <main>
+      <Nav direction="horizontal(default)|vertical">
+
+      </Nav>
+
+      <Content>
+        {/* <Article></Article> */}
         <article>
           <header>
             <h1>Lorem ipsum</h1>
@@ -31,8 +36,8 @@ Donec pellentesque sagittis nisl quis pretium. Etiam nec fermentum magna. Maecen
             <p>Posted 23/04/2020</p>
           </footer>
         </article>
-      </main>
-
+      </Content>
+      
       <footer>
 
       </footer>
