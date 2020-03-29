@@ -20,9 +20,7 @@
   --gray-shade-0: #fefefe;
   --gray-shade-1: #f2f2f2;
   --gray-shade-2: #cccccc;
-  /* --gray-shade-3: #a6a6a6; */
   --gray-shade-3: #808080;
-  /* --gray-shade-5: #5a5a5a; */
   --gray-shade-4: #333333;
   --gray-shade-5: #1a1a1a;
   --gray-shade-6: #0d0d0d;
@@ -101,35 +99,44 @@ a:hover {
   --bg-title-primary: var(--blue);
   --bg-title-secondary: var(--blue-shade-4);
   
-  --text-title-primary: var(--shade-0);
-  --text-title-secondary: var(--shade-2);
+  --text-title-primary: var(--gray-shade-0);
+  --text-title-secondary: var(--gray-shade-2);
 
-  --bg-content-primary: var(--shade-0);
-  --bg-content-secondary: var(--shade-1);
+  --bg-content-primary: var(--gray-shade-0);
+  --bg-content-secondary: var(--gray-shade-1);
 
-  --text-content-primary: var(--shade-9);
-  --text-content-secondary: var(--shade-7);
+  --text-content-primary: var(--gray-shade-6);
+  --text-content-secondary: var(--gray-shade-5);
 
   --link-primary: var(--green);
   --link-secondary: var(--light-green);
 
-  --border-primary: var(--shade-3);
+  --border-primary: var(--gray-shade-1);
 
-  --shadow-primary: var(--shade-6);
-  --shadow-secondary: var(--shade-7);
+  --shadow-primary: var(--gray-shade-3);
+  --shadow-secondary: var(--gray-shade-4);
 }
 
 .dark {
-  --bg-primary: var(--gray7);
-  --bg-secondary: var(--gray6);
+  --bg-title-primary: var(--blue-shade-5);
+  --bg-title-secondary: var(--blue-shade-4);
+  
+  --text-title-primary: var(--gray-shade-0);
+  --text-title-secondary: var(--gray-shade-2);
 
-  --text-primary: var(--gray2);
-  --text-secondary: var(--gray1);
+  --bg-content-primary: var(--gray-shade-4);
+  --bg-content-secondary: var(--gray-shade-5);
 
-  --border-primary: var(--gray6);
+  --text-content-primary: var(--gray-shade-0);
+  --text-content-secondary: var(--gray-shade-1);
 
-  --shadow-primary: var(--gray8);
-  --shadow-secondary: var(--gray7);
+  --link-primary: var(--green);
+  --link-secondary: var(--light-green);
+
+  --border-primary: var(--gray-shade-5);
+
+  --shadow-primary: var(--gray-shade-6);
+  --shadow-secondary: var(--gray-shade-6);
 }
 
 .default {
