@@ -1,6 +1,7 @@
 import React from 'react';
 
-import './Article.css'
+import './Article.css';
+import './Card.css';
 
 function Article(props) {
   const { title, subtitle, content, date } = props;
@@ -9,7 +10,7 @@ function Article(props) {
   const summary = wordList.slice(0, 10).join(' ') + '...';
 
   return (
-    <article className="article">
+    <article className="article card">
       <header>
         <h1 className="article-title">{title}</h1>
         <h3 className="article-subtitle">{subtitle}</h3>
