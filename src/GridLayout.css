@@ -6,7 +6,7 @@
 
 @media only screen and (max-width: 599px) {
     .grid-container {
-        margin: 0 16px;
+        margin: 16px 16px;
         gap: 16px 16px;
         grid-template-columns: repeat(4, 1fr);
     }
@@ -24,7 +24,7 @@
 
 @media only screen and (min-width: 600px) and (max-width: 719px) {
     .grid-container {
-        margin: 0 16px;
+        margin: 16px 16px;
         gap: 16px 16px;
         grid-template-columns: repeat(8, 1fr);
     }
@@ -50,7 +50,7 @@
 
 @media only screen and (min-width: 720px) and (max-width: 839px) {
     .grid-container {
-        margin: 0 24px;
+        margin: 24px 24px;
         gap: 24px 24px;
         grid-template-columns: repeat(8, 1fr);
     }
@@ -76,7 +76,7 @@
 
 @media only screen and (min-width: 840px) and (max-width: 1439px) {
     .grid-container {
-        margin: 0 24px;
+        margin: 24px 24px;
         gap: 24px 24px;
         grid-template-columns: repeat(12, 1fr);
     }
@@ -110,7 +110,7 @@
 
 @media only screen and (min-width: 1440px) and (max-width: 1919px) {
     .grid-container {
-        margin: 0 24px;
+        margin: 24px 24px;
         gap: 24px 24px;
         grid-template-columns: repeat(12, 1fr);
     }
@@ -144,7 +144,7 @@
 
 @media only screen and (min-width: 1920px) {
     .grid-container {
-        margin: 0 24px;
+        margin: 24px 24px;
         gap: 24px 24px;
         grid-template-columns: repeat(12, 1fr);
     }
