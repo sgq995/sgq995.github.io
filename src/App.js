@@ -4,12 +4,16 @@ import Article from './Article';
 import Nav from './Nav';
 import Content from './Content';
 
+import {DARK_THEME, LIGHT_THEME, DEFAULT_THEME} from './themes';
+
 function App() {
+  const [theme, setTheme] = React.useState(DEFAULT_THEME);
+
+  document.body.className = theme;
+
   return (
     <React.Fragment>
-      <Nav direction="horizontal(default)|vertical">
-
-      </Nav>
+      <Nav theme={theme} setTheme={setTheme} />
 
       <Content>
         {/* <Article></Article> */}
