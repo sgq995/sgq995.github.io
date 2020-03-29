@@ -2,12 +2,13 @@
   margin: 0;
   padding: 1rem 1rem 1.5rem 1rem;
 
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-content-primary);
+  color: var(--text-content-primary);
   
   border: 1px solid var(--border-primary);
   border-radius: 5px;
 
-  box-shadow: 0 0 var(--shadow-blur-radius) var(--shadow-primary);
+  box-shadow: 0 var(--shadow-layer-1) var(--shadow-blur) var(--shadow-primary);
 }
 
 @media only screen and (max-width: 719px) {

@@ -1,12 +1,13 @@
 .navbar {
     width: 100vw;
     height: 4rem;
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
 
-    border-bottom: 1px solid var(--border-primary);
+    background-color: var(--bg-title-primary);
+    color: var(--text-title-primary);
 
-    box-shadow: 0 0 var(--shadow-blur-radius) var(--shadow-primary);
+    border-bottom: 1px solid var(--bg-title-primary);
+
+    box-shadow: 0 var(--shadow-layer-3) var(--shadow-blur) var(--shadow-primary);
 }
 
 .navbar-nav {
@@ -27,12 +28,12 @@
 }
 
 .nav-link {
-    color: var(--text-primary);
+    color: var(--text-title-secondary);
     text-decoration: none;
 }
 
 .nav-link:hover {
-    color: var(--text-secondary);
+    color: var(--text-title-primary);
 }
 
 @media only screen and (max-width: 599px) {
@@ -58,7 +59,7 @@
     }
 
     .nav-item-selected {
-        border-left: 2px solid var(--bg-secondary);
+        border-left: 2px solid var(--bg-title-secondary);
     }
 }
 
@@ -77,6 +78,6 @@
     }
 
     .nav-item-selected {
-        border-bottom: 2px solid var(--bg-secondary);
+        border-bottom: 2px solid var(--bg-title-secondary);
     }
 }

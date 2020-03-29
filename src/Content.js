@@ -40,7 +40,10 @@ function Content(props) {
           </details>
         </section>
         <section className="card">
-          Extra...
+          <p>
+            Extra...
+          </p>
+          <a href="#">Test color</a>
         </section>
       </aside>
     </div>
