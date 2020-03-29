@@ -52,6 +52,14 @@
     .navbar-nav:focus-within {
         visibility: visible;
     }
+
+    .nav-item {
+        /* padding: ; */
+    }
+
+    .nav-item-selected {
+        border-left: 2px solid var(--bg-secondary);
+    }
 }
 
 @media only screen and (min-width: 600px) {
@@ -62,5 +70,13 @@
 
     .navbar-nav {
         visibility: visible;
+    }
+
+    .nav-item {
+        padding: 0 15px;
+    }
+
+    .nav-item-selected {
+        border-bottom: 2px solid var(--bg-secondary);
     }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 import {DARK_THEME, LIGHT_THEME} from './themes';
 
@@ -17,7 +17,7 @@ function Nav(props) {
     'Contact'
   ];
   
-  const makeIconItem = (key, icon, iconProps, link, onclick) => {
+  const makeIconItem = (icon, link, onclick, iconProps) => {
     return (
       <a href={link ? link : '#'} className="nav-link" onClick={onclick}>
         <FontAwesomeIcon icon={icon} props={iconProps} />
@@ -47,14 +47,18 @@ function Nav(props) {
     setTheme(nextTheme);
   };
 
-  const bars = makeIconItem('bars', faBars);
-  const themeSelector = makeLinkItem(theme === LIGHT_THEME ? 'Dark' : 'Light', '#', themeChangeHandle);
+  const bars = makeIconItem(faBars);
+  const links = items.map(item => makeListItem(item, makeLinkItem(item)));
+  // const themeSelector = makeLinkItem(theme === LIGHT_THEME ? 'Dark' : 'Light', '#', themeChangeHandle);
+  
+  const nextThemeIcon = theme === LIGHT_THEME ? faMoon : faSun;
+  const themeSelector = makeIconItem(nextThemeIcon, undefined, themeChangeHandle);
 
   return (
     <nav className="navbar">
         <ul className="navbar-nav">
           {makeListItem('bars', bars, 'navbar-menu')}
-          {items.map(item => makeListItem(item, makeLinkItem(item)))}
+          {links}
           {makeListItem('theme', themeSelector, 'navbar-theme')}
         </ul>
     </nav>
