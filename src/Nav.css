@@ -1,8 +1,12 @@
 .navbar {
     width: 100vw;
-    height: 3rem;
-    background-color: var(--bg-primary);
+    height: 4rem;
+    background-color: var(--bg-secondary);
     color: var(--text-primary);
+
+    border-bottom: 1px solid var(--border-primary);
+
+    box-shadow: 0 0 var(--shadow-blur-radius) var(--shadow-primary);
 }
 
 .navbar-nav {
@@ -13,7 +17,6 @@
     align-items: center;
     justify-content: space-evenly;
     height: 100%;
-    border-bottom: 1px solid var(--bg-secondary);
 }
 
 .nav-item {
@@ -35,6 +38,7 @@
 @media only screen and (max-width: 599px) {
     .navbar-menu {
         visibility: visible;
+        display: flex;
     }
 
     .navbar-theme {
@@ -53,6 +57,7 @@
 @media only screen and (min-width: 600px) {
     .navbar-menu {
         visibility: hidden;
+        display: none;
     }
 
     .navbar-nav {
