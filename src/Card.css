@@ -1,0 +1,23 @@
+.card {
+  margin: 0;
+  padding: 1rem 1rem 1.5rem 1rem;
+
+  background-color: var(--bg-secondary);
+  
+  border: 1px solid var(--border-primary);
+  border-radius: 5px;
+
+  box-shadow: 0 0 var(--shadow-blur-radius) var(--shadow-primary);
+}
+
+@media only screen and (max-width: 719px) {
+  .card {
+    margin-bottom: 16px;
+  }
+}
+
+@media only screen and (min-width: 720px) {
+  .card {
+    margin-bottom: 24px;
+  }
+}

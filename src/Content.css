@@ -1,0 +1,19 @@
+.content {
+  margin-top: 16px;
+}
+
+.content-main {
+  /* margin-top: 2.5rem; */
+}
+
+.content-aside {
+  
+}
+
+.content-aside-details {
+  padding: 0 1em;
+}
+
+.content-aside-summary {
+  margin: 0 -1em;
+}
