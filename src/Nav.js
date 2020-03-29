@@ -22,19 +22,15 @@ function Nav(props) {
   
   const makeIconItem = (key, icon, iconProps, link, onclick) => {
     return (
-      <li className="nav-item" key={key}>
-        <a href={link ? link : '#'} className="nav-link" onClick={onclick}>
-          <FontAwesomeIcon icon={icon} props={iconProps} />
-        </a>
-      </li>
+      <a href={link ? link : '#'} className="nav-link" onClick={onclick}>
+        <FontAwesomeIcon icon={icon} props={iconProps} />
+      </a>
     );
   };
 
   const makeLinkItem = (text, link, onclick) => {
     return (
-      <li className="nav-item" key={text.toLowerCase()}>
-        <a href={link ? link : '#'} className="nav-link" onClick={onclick}>{text}</a>
-      </li>
+      <a href={link ? link : '#'} className="nav-link" onClick={onclick}>{text}</a>
     );
   };
 
@@ -46,7 +42,15 @@ function Nav(props) {
         </a>
       </li>
     );
-  }
+  };
+
+  const makeListItem = (key, content) => {
+    return (
+      <li className="nav-item" key={key.toLowerCase()}>
+        {content}
+      </li>
+    );
+  };
 
   const themeChangeHandle = () => {
     setTheme(theme === LIGHT_THEME ? NIGHT_THEME : LIGHT_THEME);
@@ -54,12 +58,30 @@ function Nav(props) {
 
   return (
     <nav className="navbar">
-      <ul className="navbar-nav">
-        {/* {makeImageItem('#', MenuIcon, 'Menu')} */}
-        {makeIconItem('bars', faBars)}
-        {items.map(item => makeLinkItem(item))}
+      <div className="navbar-grid grid-container" 
+          style={{
+            alignContent: 'center'
+          }}>
+        <span className="navbar-item 
+            col-md-start-2 
+            col-lg-start-3 
+            col-xl-start-3"
+            style={{
+              marginLeft: 'auto'
+            }}>
+          {makeIconItem('bars', faBars)}
+        </span>
+        <ul className="navbar-nav
+            col-xs-span-2 
+            col-sm-start-2 col-sm-span-6 
+            col-md-start-3 col-md-span-8 
+            col-lg-start-4 col-lg-span-6 
+            col-xl-start-4 col-xl-span-6">
+          {/* {makeImageItem('#', MenuIcon, 'Menu')} */}
+          {items.map(item => makeListItem(item, makeLinkItem(item)))}
+        </ul>
         {makeLinkItem(theme === LIGHT_THEME ? 'Night' : 'Light', '#', themeChangeHandle)}
-      </ul>
+      </div>
     </nav>
   );
 }
