@@ -1,0 +1,35 @@
+.article {
+  margin: 0;
+  padding: 1rem 1rem 1.5rem 1rem;
+  background-color: var(--bg-secondary);
+  
+  border: 1px solid var(--border-primary);
+  border-radius: 5px;
+
+  box-shadow: 0 0 var(--shadow-blur-radius) var(--shadow-primary);
+}
+
+.article-title {
+  margin: 0;
+}
+
+.article-subtitle {
+  margin: 0;
+}
+
+.article-footer {
+  margin: 0;
+  text-align: right;
+}
+
+@media only screen and (max-width: 719px) {
+  .article {
+    margin-top: 16px;
+  }
+}
+
+@media only screen and (min-width: 720px) {
+  .article {
+    margin-top: 24px;
+  }
+}
