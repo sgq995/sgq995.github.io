@@ -55,6 +55,48 @@
   --shadow-blur: 3px;
 
   --shadow-color: black;
+
+  /* SASS variables */
+  --xs-max-width: 599px;
+
+  --sm-min-width: 600px;
+  --sm-max-width: 1023px;
+
+  --md-min-width: 1024px;
+  --md-max-width: 1439px;
+
+  --lg-min-width: 1440px;
+  --lg-max-width: 1919px;
+
+  --xl-min-width: 1920px;
+}
+
+@media only screen and (max-width: 599px) {
+  :root {
+    --gutters: 8px;
+    --margin: 16px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
+  :root {
+    --gutters: 16px;
+    --margin: 24px;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+  :root {
+    --gutters: 24px;
+    --margin: 32px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  :root {
+    --gutters: 32px;
+    --margin: 64px;
+  }
 }
 
 body {
