@@ -1,0 +1,8 @@
+.link-button {
+  padding: 8px;
+}
+
+.link-button:hover {
+  background-color: #fafafa;
+  border-radius: 5px;
+}

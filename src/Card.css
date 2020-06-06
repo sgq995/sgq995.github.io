@@ -1,5 +1,5 @@
 .card {
-  margin: 8px;
+  margin: var(--gutters);
   padding: 8px;
 
   width: 10rem;
@@ -16,12 +16,16 @@
 
 .card-header {
   width: 100%;
-  margin-bottom: 8px;
+  /* margin-bottom: 0.86666rem; */
+}
+
+.card-title {
+  margin: 0;
 }
 
 .card-footer {
   width: 100%;
-  margin-top: 8px;
+  /* margin-top: 8px; */
 }
 
 .card-bottom-bar {
