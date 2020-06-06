@@ -1,17 +1,30 @@
 .post {
   display: flex;
   flex-direction: column;
-  margin-bottom: 32px;
+  margin: 16px 0;
+}
+
+.post-title {
+  color: black;
+}
+
+.post-subtitle {
+
 }
 
 .post-header {
   display: flex;
   flex-direction: column;
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
+}
+
+.post-content {
+  text-align: justify;
+  line-height: 1.5rem;
 }
 
 .post-footer {
   display: flex;
   flex-direction: column;
-  margin-top: 8px;
+  /* margin-top: 8px; */
 }

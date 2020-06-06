@@ -4,7 +4,7 @@ import ThemeContext from './ThemeContext';
 function Typography(props) {
   const { children, component='span', ...opts } = props;
 
-  const theme = React.useContext(ThemeContext);
+  // const theme = React.useContext(ThemeContext);
 
   return React.createElement(component, opts, children);
 }
