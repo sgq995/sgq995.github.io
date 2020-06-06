@@ -13,6 +13,9 @@ import Post from './Post';
 import Row from './Row';
 import Space from './Space';
 import Footer from './Footer';
+import Search from './Search';
+import ButtonIcon from './ButtonIcon';
+import Select from './Select';
 // import ThemeContext from './ThemeContext';
 
 // import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -22,12 +25,9 @@ function App() {
     // <ThemeContext>
     <React.Fragment>
       <NavBar style={{backgroundColor: 'white'}}>
-        <Link href="#">
-          <Icon icon="menu" />
-        </Link>
-        <Link href="#">Hello</Link>
-        <Link href="#">Search</Link>
-        <Link href="#">Test</Link>
+        <ButtonIcon icon="menu" />
+        <Link href="#">The Code Blog</Link>
+        <Search />
       </NavBar>
       <Carousel>
         <Card />
@@ -48,6 +48,15 @@ function App() {
             <Link href="#">Category</Link>
             <span style={{width: '8px'}}></span>
             <Link href="#">Tags</Link>
+            <Select placeholder="Category">
+              <option default>Category</option>
+              <option>Welcome</option>
+              <option>Javascript</option>
+              <option>C++</option>
+            </Select>
+            <Select placeholder="Tag">
+
+            </Select>
           </Row>
           {/* <span style={{height: '24px'}}></span> */}
 
@@ -60,7 +69,7 @@ function App() {
           <Post />
           <Post />
         </Column>
-        {/* <Archive>
+        <Archive>
           <Typography>
             Category
           </Typography>
@@ -70,7 +79,7 @@ function App() {
           <Typography>
             History
           </Typography>
-        </Archive> */}
+        </Archive>
       </Content>
       <Footer>
         <Row>

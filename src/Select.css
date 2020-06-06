@@ -1,0 +1,22 @@
+.select {
+  display: block;
+  margin: 0;
+  padding: 8px;
+  border: none;
+  border-radius: 16px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  background-color: #4848f510;
+  color: #4848f5;
+  cursor: pointer;
+}
+
+.select:hover {
+  background-color: #4848f530;
+}
+
+.select::-ms-expand {
+  display: none;
+}

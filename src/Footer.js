@@ -6,7 +6,7 @@ function Footer(props) {
   const { children } = props;
 
   return (
-    <footer class="footer">
+    <footer className="footer">
       {children}
     </footer>
   );
