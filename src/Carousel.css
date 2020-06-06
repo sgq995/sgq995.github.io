@@ -11,6 +11,23 @@
   width: 100%;
   max-width: 1240px;
   overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: red blue;
+}
+
+.carousel::-webkit-scrollbar {
+  width: 11px;
+  height: 6px;
+}
+
+.carousel::-webkit-scrollbar-track {
+  background: blue;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+  background-color: red;
+  border-radius: 6px;
+  border: 3px solid blue;
 }
 
 @media only screen and (max-width: 599px) {
