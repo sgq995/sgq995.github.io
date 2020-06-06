@@ -1,0 +1,79 @@
+.typography-headline1 {
+  font-weight: lighter; 
+  font-size: 96px;
+  letter-spacing: -1.5px;
+}
+
+.typography-headline2 {
+  font-weight: lighter;
+  font-size: 60px;
+  letter-spacing: -0.5px;
+}
+
+.typography-headline3 {
+  font-weight: normal;
+  font-size: 48px;
+  letter-spacing: 0px;
+}
+
+.typography-headline4 {
+  font-weight: normal;
+  font-size: 34px;
+  letter-spacing: 0.25px;
+}
+
+.typography-headline5 {
+  font-weight: normal;
+  font-size: 24px;
+  letter-spacing: 0px;
+}
+
+.typography-headline6 {
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 0.15px;
+}
+
+.typography-subtitle1 {
+  font-weight: normal;
+  font-size: 16px;
+  letter-spacing: 0.15px;
+}
+
+.typography-subtitle2 {
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.1px;
+}
+
+.typography-body1 {
+  font-weight: normal;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.typography-body2 {
+  font-weight: normal;
+  font-size: 14px;
+  letter-spacing: 0.25px;
+}
+
+.typography-button {
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+}
+
+.typography-caption {
+  font-weight: normal;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+}
+
+.typography-overline {
+  font-weight: normal;
+  size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
