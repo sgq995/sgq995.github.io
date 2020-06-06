@@ -1,0 +1,11 @@
+.column {
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: flex-start;
+}
+
+.column > * {
+  /* margin-bottom: 16px; */
+}

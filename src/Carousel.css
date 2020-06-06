@@ -1,0 +1,35 @@
+.carousel-container {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  width: 100%;
+  max-width: 1240px;
+  overflow-x: auto;
+}
+
+@media only screen and (max-width: 599px) {
+  .carousel {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 719px) {
+  .carousel {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
+
+@media only screen and (min-width: 720) and (max-width: 1919px) {
+  .carousel {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+}

@@ -1,0 +1,20 @@
+import React from 'react';
+
+import './Archive.css'
+import Column from './Column';
+
+function Archive(props) {
+  const { children } = props;
+
+  return (
+    <div className="archive-container">
+      <section className="archive">
+        <Column>
+          {children}
+        </Column>
+      </section>
+    </div>
+  );
+}
+
+export default Archive;

@@ -1,6 +1,9 @@
 .card {
-  margin: 0;
-  padding: 1rem 1rem 1.5rem 1rem;
+  margin: 8px;
+  padding: 8px;
+
+  width: 10rem;
+  min-width: 10rem;
 
   background-color: var(--bg-content-primary);
   color: var(--text-content-primary);
@@ -11,14 +14,31 @@
   box-shadow: 0 var(--shadow-layer-1) var(--shadow-blur) var(--shadow-primary);
 }
 
+.card-header {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.card-footer {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.card-bottom-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media only screen and (max-width: 719px) {
   .card {
-    margin-bottom: 16px;
+    /* margin-bottom: 16px; */
   }
 }
 
 @media only screen and (min-width: 720px) {
   .card {
-    margin-bottom: 24px;
+    /* margin-bottom: 24px; */
   }
 }

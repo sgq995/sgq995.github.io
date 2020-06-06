@@ -1,19 +1,15 @@
+.content-container {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  width: 100%;
+  box-shadow: 0 var(--shadow-layer-1) var(--shadow-blur) var(--shadow-primary);
+}
+
 .content {
-  margin-top: 16px;
-}
-
-.content-main {
-  /* margin-top: 2.5rem; */
-}
-
-.content-aside {
-  
-}
-
-.content-aside-details {
-  padding: 0 1em;
-}
-
-.content-aside-summary {
-  margin: 0 -1em;
+  display: flex;
+  justify-content: space-between;
+  margin: 16px;
+  width: 100%;
+  max-width: 60rem;
 }
