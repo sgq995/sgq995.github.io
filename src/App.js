@@ -12,6 +12,7 @@ import Column from './Column';
 import Post from './Post';
 import Row from './Row';
 import Space from './Space';
+import Footer from './Footer';
 // import ThemeContext from './ThemeContext';
 
 // import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -48,7 +49,7 @@ function App() {
             <span style={{width: '8px'}}></span>
             <Link href="#">Tags</Link>
           </Row>
-          <span style={{height: '24px'}}></span>
+          {/* <span style={{height: '24px'}}></span> */}
 
           <Post />
           <Post />
@@ -71,6 +72,11 @@ function App() {
           </Typography>
         </Archive> */}
       </Content>
+      <Footer>
+        <Row>
+          &copy; The Code Blog
+        </Row>
+      </Footer>
     </React.Fragment>
     // </ThemeContext>
   );
