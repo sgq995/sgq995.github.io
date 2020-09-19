@@ -77,3 +77,7 @@
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
+
+.typography-special {
+  font-family: 'Architects Daughter', cursive;
+}
