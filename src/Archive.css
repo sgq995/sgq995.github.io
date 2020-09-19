@@ -4,8 +4,21 @@
 }
 
 .archive {
+  display: flex;
   position: sticky;
   top: 0;
-  border-left: 2px solid black;
   padding: 8px;
+}
+
+@media only screen and (max-width: 1023px) {
+  .archive {
+    justify-content: space-around;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .archive {
+    flex-direction: column;
+    border-left: 1px solid black;
+  }
 }

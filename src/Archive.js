@@ -9,9 +9,9 @@ function Archive(props) {
   return (
     <div className="archive-container">
       <section className="archive">
-        <Column>
+        {/* <Column> */}
           {children}
-        </Column>
+        {/* </Column> */}
       </section>
     </div>
   );
