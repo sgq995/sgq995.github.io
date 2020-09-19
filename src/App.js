@@ -24,9 +24,13 @@ function App() {
   return (
     // <ThemeContext>
     <React.Fragment>
-      <NavBar style={{backgroundColor: 'white'}}>
+      <NavBar style={{ backgroundColor: 'white' }}>
         <ButtonIcon icon="menu" />
-        <Link href="#">The Code Blog</Link>
+        <Link href="//thecode.blog">
+          <Typography special>
+            The Code Blog
+          </Typography>
+        </Link>
         <Search />
       </NavBar>
       <Carousel>
@@ -46,7 +50,7 @@ function App() {
         <Column>
           <Row>
             <Link href="#">Category</Link>
-            <span style={{width: '8px'}}></span>
+            <span style={{ width: '8px' }}></span>
             <Link href="#">Tags</Link>
             <Select placeholder="Category">
               <option default>Category</option>
