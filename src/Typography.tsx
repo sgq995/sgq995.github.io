@@ -3,7 +3,14 @@ import ThemeContext from './ThemeContext';
 
 import './Typography.css'
 
-function Typography(props) {
+interface TypographyProps extends
+    React.ComponentProps<React.FC>
+    , React.HTMLAttributes<HTMLElement> {
+  component?: string;
+  special?: boolean;
+}
+
+function Typography(props: TypographyProps) {
   const { children, component='span', special, ...opts } = props;
 
   // const theme = React.useContext(ThemeContext);

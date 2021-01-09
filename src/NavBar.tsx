@@ -2,7 +2,10 @@ import React from 'react';
 
 import './NavBar.css';
 
-function NavBar(props) {
+function NavBar(props: React.ComponentProps<React.FC<
+      React.DOMAttributes<HTMLDivElement>
+      | React.HTMLAttributes<HTMLDivElement>
+    >>) {
   const { children, ...opts } = props;
 
   return (

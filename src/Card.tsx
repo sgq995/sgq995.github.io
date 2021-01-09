@@ -8,7 +8,7 @@ import Link from './Link';
 import Space from './Space';
 import ButtonLink from './ButtonLink';
 
-function Card(props) {
+function Card(props: React.ComponentProps<React.FC>) {
   const { children } = props;
   
   return (

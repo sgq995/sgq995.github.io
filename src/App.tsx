@@ -3,7 +3,6 @@ import React from 'react';
 import Typography from './Typography';
 import Link from './Link';
 import NavBar from './NavBar';
-import Icon from './Icon';
 import Card from './Card';
 import Carousel from './Carousel';
 import Content from './Content';
@@ -53,7 +52,7 @@ function App() {
             <span style={{ width: '8px' }}></span>
             <Link href="#">Tags</Link>
             <Select placeholder="Category">
-              <option default>Category</option>
+              <option>Category</option>
               <option>Welcome</option>
               <option>Javascript</option>
               <option>C++</option>

@@ -2,7 +2,11 @@ import React from 'react';
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function Icon(props) {
+interface IconProps extends React.ComponentProps<React.FC> {
+  icon: string;
+}
+
+function Icon(props: IconProps) {
   const { icon, ...opts } = props;
 
   return (

@@ -2,7 +2,12 @@ import React from 'react';
 
 import './Column.css';
 
-function Column(props) {
+interface ColumnProps extends React.ComponentProps<React.FC> {
+  component?: string;
+  className?: string;
+}
+
+function Column(props: ColumnProps) {
   const { children, component, className, ...extra } = props;
 
   const element = component ? component : 'div';

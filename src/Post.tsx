@@ -6,7 +6,7 @@ import './Post.css'
 import Icon from './Icon';
 import Row from './Row';
 
-function Post(props) {
+function Post(props: React.ComponentProps<React.FC>) {
   const { children } = props;
 
   return (

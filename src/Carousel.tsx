@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Carousel.css'
 
-function Carousel(props) {
+function Carousel(props: React.ComponentProps<React.FC>) {
   const { children } = props;
   
   return (

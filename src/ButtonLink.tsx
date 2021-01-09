@@ -4,7 +4,13 @@ import Link from './Link';
 import './ButtonLink.css';
 import Typography from './Typography';
 
-function ButtonLink(props) {
+interface ButtonLinkProps extends 
+    React.ComponentProps<React.FC>
+    , React.DOMAttributes<HTMLAnchorElement> {
+  href: string;
+}
+
+function ButtonLink(props: ButtonLinkProps) {
   const { children, onClick, href, ...extra } = props;
 
   return (

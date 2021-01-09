@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Footer.css';
 
-function Footer(props) {
+function Footer(props: React.ComponentProps<React.FC>) {
   const { children } = props;
 
   return (

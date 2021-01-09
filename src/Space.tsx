@@ -1,6 +1,11 @@
 import React from 'react';
 
-function Space(props) {
+interface SpaceProps {
+  width?: string;
+  height?: string;
+}
+
+function Space(props: SpaceProps) {
   const { width, height } = props;
 
   return (

@@ -4,7 +4,13 @@ import Icon from './Icon';
 
 import './ButtonIcon.css'
 
-function ButtonIcon(props) {
+interface ButtonIconProps extends
+    React.ComponentProps<React.FC>,
+    React.DOMAttributes<HTMLButtonElement> {
+  icon: string;
+};
+
+function ButtonIcon(props: ButtonIconProps) {
   const { icon, onClick, ...extra } = props;
 
   return (

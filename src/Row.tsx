@@ -2,7 +2,14 @@ import React from 'react';
 
 import './Row.css';
 
-function Row(props) {
+interface RowProps extends 
+    React.ComponentProps<React.FC>
+    , React.HTMLAttributes<HTMLElement>
+    , React.DOMAttributes<HTMLElement> {
+  component?: string;
+}
+
+function Row(props: RowProps) {
   const { children, component, className, ...extra } = props;
 
   const element = component ? component : 'div';

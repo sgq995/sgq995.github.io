@@ -3,7 +3,7 @@ import React from 'react';
 import './Archive.css'
 import Column from './Column';
 
-function Archive(props) {
+function Archive(props: React.ComponentProps<React.FC>) {
   const { children } = props;
 
   return (

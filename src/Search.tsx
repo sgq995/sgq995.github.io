@@ -2,7 +2,7 @@ import React from 'react';
 import Icon from './Icon';
 import ButtonIcon from './ButtonIcon';
 
-function Search(props) {
+function Search() {
   return (
     <div>
       <ButtonIcon icon="search" />

@@ -3,9 +3,14 @@ import React from 'react';
 import './Article.css';
 import './Card.css';
 
-function Article(props) {
-  const { title, subtitle, content, date } = props;
+interface ArticleProps extends React.ComponentProps<React.FC> {
+  title: string,
+  subtitle: string,
+  content: string,
+  date: string,
+}
 
+function Article({ title, subtitle, content, date }: ArticleProps) {
   const wordList = content.split(' ');
   const summary = wordList.slice(0, 10).join(' ') + '...';
 

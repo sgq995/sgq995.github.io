@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Content.css';
 
-function Content(props) {
+function Content(props: React.ComponentProps<React.FC>) {
   const { children } = props;
 
   return (
