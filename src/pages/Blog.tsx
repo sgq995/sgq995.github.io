@@ -6,8 +6,6 @@ import './Blog.css';
 function Blog() {
   return (
     <div className="Blog">
-      <div className="Blog__border-wrapper"></div>
-
       <div className="Blog__wrapper">
         <div className="Blog__content">
           <Post />

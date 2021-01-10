@@ -1,31 +1,12 @@
 .Blog {
-  width: 100vw;
+  /* width: 100vw; */
   /* height: 100vh; */
 
   display: flex;
   justify-content: center;
 }
 
-.Blog__border-wrapper {
-  box-sizing: border-box;
-  height: 100vh;
-  padding: 0 2px;
-  
-  background: linear-gradient(#cccccc, #999999, #cccccc);
-
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  z-index: 4;
-
-  /* opacity: 0.4; */
-
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-}
-
 .Blog__wrapper {
-  position: absolute;
-  z-index: 5;
   /* box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4); */
 }
 
@@ -52,10 +33,6 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  .Blog__wrapper {
-    padding: 0;
-  }
-
   .Blog__content {
     padding: 15px 30px;
   }
@@ -70,10 +47,6 @@
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  .Blog__border-wrapper {
-    width: 624px;
-  }
-
   .Blog__content {
     max-width: 620px;
     padding: 30px 60px;
@@ -82,10 +55,6 @@
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  .Blog__border-wrapper {
-    width: 784px;
-  }
-
   .Blog__content {
     max-width: 780px;
     padding: 30px 60px;
@@ -94,10 +63,6 @@
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {  
-  .Blog__border-wrapper {
-    width: 924px;
-  }
-  
   .Blog__content {
     max-width: 920px;
     padding: 30px 60px;
