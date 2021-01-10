@@ -1,13 +1,10 @@
 .Blog {
-  /* width: 100vw; */
-  /* height: 100vh; */
-
   display: flex;
   justify-content: center;
 }
 
 .Blog__wrapper {
-  /* box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4); */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 .Blog__content {
