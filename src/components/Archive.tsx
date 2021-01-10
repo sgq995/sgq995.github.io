@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './Archive.css'
-import Column from './Column';
+// import Column from './layout/Column';
 
 function Archive(props: React.ComponentProps<React.FC>) {
   const { children } = props;

@@ -1,6 +1,6 @@
 import React from 'react';
-import Typography from './Typography';
-import Icon from './Icon';
+import Typography from '../Typography';
+import Icon from '../Icon';
 
 import './ButtonIcon.css'
 

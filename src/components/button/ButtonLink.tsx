@@ -2,7 +2,7 @@ import React from 'react';
 import Link from './Link';
 
 import './ButtonLink.css';
-import Typography from './Typography';
+import Typography from '../Typography';
 
 interface ButtonLinkProps extends 
     React.ComponentProps<React.FC>

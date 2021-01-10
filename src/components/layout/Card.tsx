@@ -1,12 +1,12 @@
 import React from 'react';
 
 import './Card.css';
-import Typography from './Typography';
+import Typography from '../Typography';
 import Column from './Column';
 import Row from './Row';
-import Link from './Link';
+import Link from '../button/Link';
 import Space from './Space';
-import ButtonLink from './ButtonLink';
+import ButtonLink from '../button/ButtonLink';
 
 function Card(props: React.ComponentProps<React.FC>) {
   const { children } = props;

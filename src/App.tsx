@@ -1,20 +1,20 @@
 import React from 'react';
 
-import Typography from './Typography';
-import Link from './Link';
-import NavBar from './NavBar';
-import Card from './Card';
-import Carousel from './Carousel';
-import Content from './Content';
-import Archive from './Archive';
-import Column from './Column';
-import Post from './Post';
-import Row from './Row';
-import Space from './Space';
-import Footer from './Footer';
-import Search from './Search';
-import ButtonIcon from './ButtonIcon';
-import Select from './Select';
+import Typography from './components/Typography';
+import Link from './components/button/Link';
+import NavBar from './components/NavBar';
+import Card from './components/layout/Card';
+import Carousel from './components/Carousel';
+import Content from './components/Content';
+import Archive from './components/Archive';
+import Column from './components/layout/Column';
+import Post from './components/Post';
+import Row from './components/layout/Row';
+import Space from './components/layout/Space';
+import Footer from './components/Footer';
+import Search from './components/Search';
+import ButtonIcon from './components/button/ButtonIcon';
+import Select from './components/Select';
 // import ThemeContext from './ThemeContext';
 
 // import { faBars } from '@fortawesome/free-solid-svg-icons';

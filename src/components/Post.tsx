@@ -1,10 +1,10 @@
 import React from 'react';
 import Typography from './Typography';
-import Link from './Link';
+import Link from './button/Link';
 
 import './Post.css'
 import Icon from './Icon';
-import Row from './Row';
+import Row from './layout/Row';
 
 function Post(props: React.ComponentProps<React.FC>) {
   const { children } = props;

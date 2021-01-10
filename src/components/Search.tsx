@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from './Icon';
-import ButtonIcon from './ButtonIcon';
+import ButtonIcon from './button/ButtonIcon';
 
 function Search() {
   return (
