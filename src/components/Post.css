@@ -10,8 +10,10 @@
   margin: 0;
 
   font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
 
-  font-size: 32px;
+  /* font-size: 32px; */
+  font-size: 2rem;
 }
 
 .Post__headline2 {
@@ -20,18 +22,31 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
 
-  font-size: 24px;
-  line-height: 32px;
+  /* font-size: 24px; */
+  font-size: 1.5rem;
+  /* line-height: 32px; */
+  line-height: 2rem;
+}
+
+.Post__caption {
+  margin: 0;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+
+  font-size: 0.5rem;
 }
 
 .Post__body {
-  margin: 16px 0;
+  /* margin: 16px 0; */
+  margin: 1rem 0;
 
   font-family: 'Montserrat', sans-serif;
 
-  font-size: 16px;
+  /* font-size: 16px; */
+  font-size: 1rem;
   text-align: justify;
 
-  /* letter-spacing: 1px; */
-  line-height: 32px;
+  /* line-height: 32px; */
+  line-height: 2rem;
 }
