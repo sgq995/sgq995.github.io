@@ -1,5 +1,6 @@
 import React from 'react';
 import Post from '../components/Post';
+import Separator from '../components/Separator';
 
 import './Blog.css';
 
@@ -10,7 +11,11 @@ function Blog() {
         <div className="Blog__content">
           <Post />
 
+          <Separator />
+
           <Post />
+
+          <Separator />
 
           <Post />
         </div>
