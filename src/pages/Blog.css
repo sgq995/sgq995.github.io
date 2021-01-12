@@ -3,10 +3,6 @@
   justify-content: center;
 }
 
-.Blog__wrapper {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-}
-
 .Blog__content {
   box-sizing: border-box;
   width: 100%;
@@ -44,6 +40,11 @@
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+  .Blog__wrapper {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+  }
+
   .Blog__content {
     max-width: 620px;
     padding: 30px 60px;
