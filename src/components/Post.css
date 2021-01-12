@@ -9,6 +9,8 @@
 .Post__headline1 {
   margin: 0;
 
+  color: #000000;
+
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
 
@@ -18,6 +20,8 @@
 
 .Post__headline2 {
   margin: 0;
+
+  color: #1a1a1a;
 
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
@@ -34,12 +38,14 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
 
-  font-size: 0.5rem;
+  font-size: 0.75rem;
 }
 
 .Post__body {
   /* margin: 16px 0; */
   margin: 1rem 0;
+
+  color: #101010;
 
   font-family: 'Montserrat', sans-serif;
 
@@ -48,5 +54,5 @@
   text-align: justify;
 
   /* line-height: 32px; */
-  line-height: 2rem;
+  line-height: 1.5rem;
 }
