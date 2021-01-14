@@ -1,6 +1,11 @@
 .Blog {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Blog__wrapper {
+  background-color: #fff;
 }
 
 .Blog__content {
@@ -10,22 +15,9 @@
   background-color: #fff;
 }
 
-.Blog__glass {
-  background: #fff;
-  filter: blur(8px);
-  opacity: 0.4;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  z-index: 7;
-}
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  .Blog .Nav,
   .Blog__content {
     padding: 15px 30px;
   }
@@ -45,6 +37,7 @@
     backdrop-filter: blur(4px);
   }
 
+  .Blog .Nav,
   .Blog__content {
     max-width: 620px;
     padding: 30px 60px;
@@ -53,6 +46,7 @@
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  .Blog .Nav,
   .Blog__content {
     max-width: 780px;
     padding: 30px 60px;
@@ -61,6 +55,7 @@
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {  
+  .Blog .Nav,
   .Blog__content {
     max-width: 920px;
     padding: 30px 60px;

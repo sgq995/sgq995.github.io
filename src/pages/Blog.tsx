@@ -1,4 +1,5 @@
 import React from 'react';
+import Nav from '../components/Nav';
 import Post from '../components/Post';
 import Separator from '../components/Separator';
 
@@ -8,7 +9,9 @@ function Blog() {
   return (
     <div className="Blog">
       <div className="Blog__wrapper">
-        <div className="Blog__content">
+        <Nav />
+
+        <section className="Blog__content">
           <Post />
 
           <Separator />
@@ -18,10 +21,8 @@ function Blog() {
           <Separator />
 
           <Post />
-        </div>
+        </section>
       </div>
-
-      {/* <div className="Blog__glass"></div> */}
     </div>
   );
 }

@@ -1,0 +1,42 @@
+.Nav {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px 30px;
+
+  background-color: rgba(255, 255, 255, 0.8);
+
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  backdrop-filter: blur(4px);
+
+  display: flex;
+  justify-content: space-between;
+
+  position: sticky;
+  top: 0;
+
+  transition: all 0.25s linear;
+}
+
+.Nav--shadow {
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
+
+  transition: all 1s linear;
+}
+
+.Nav__list {
+  padding: 0;
+  margin: 0;
+
+  list-style-type: none;
+}
+
+.Nav__item {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.Nav__item:first-child {
+  margin-left: 0;
+}
