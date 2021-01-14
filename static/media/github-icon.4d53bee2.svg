@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="32"
+   height="32"
+   viewBox="0 0 8.4666665 8.4666669"
+   version="1.1"
+   id="svg1153"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07, custom)"
+   sodipodi:docname="github-icon.svg">
+  <defs
+     id="defs1147" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="14.46875"
+     inkscape:cx="16"
+     inkscape:cy="16"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer3"
+     inkscape:document-rotation="0"
+     showgrid="true"
+     units="px"
+     inkscape:window-width="1404"
+     inkscape:window-height="838"
+     inkscape:window-x="342"
+     inkscape:window-y="116"
+     inkscape:window-maximized="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid1716"
+       dotted="true" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata1150">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="background"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#101010;stroke-width:0;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="rect1733"
+       width="8.4666662"
+       height="8.4666662"
+       x="0"
+       y="0"
+       ry="2.1166668" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="icon">
+    <image
+       width="6.3499999"
+       height="6.3499999"
+       preserveAspectRatio="none"
+       style="image-rendering:optimizeSpeed"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAcNJREFU
+WIXtlj9rVEEUxc99UaOCYAwERCwU0sTPIKi1hR8gllpoZWyshJQpJLDNNumDvR8gYCtsFXiNhZgu
+RYRlYebx5hwLX+Bl3fdndkdJsQemuXdmzu++O8w8YKmlluoQySNJtxrSGQCrxgVJukryuCiK64uY
+D1XJOfe0tvl7kjnJU5JnJEeS3lVpy/P85vk6kl/bPP4inwI4MbN7tdBJNTYBrE9N/yHpp5k9BLAG
+4EYVPzWzjbkAJJUAVtrm9FArQNYB8H1BcwD41ZZsAzAAjeQRujMXgKRDM7udAGA9hLAXDQDgUQLz
+PyZZ9qwp13gIJSkVAACY2QoATsdbD2FizSzofwLMVBvAcUKfL9EAkq6lcg8h3EVsC8zsUyqALMs+
+zLWQ5GctKO/9dm9DSVdIbtVjZVnuzGvunNuJqljSA0kMRXgzHA7r8Sfe+7yPaVEU35xzB1HGNaNM
+0itJIvlc0syLStLLWebouPdjQLYlKYTwcTo3Ho/vN1Xvvd9FxxPfW2VZPq723fferw0Gg9XRaPS6
+qwVJzM9F8m2fvv8zAEkm6QXJQ0lHk8lkNzVAdL+6TMwsas9L/RhdSoA+nzfqL/o3OqAmZVIE8BcA
+AAAASUVORK5CYII=
+"
+       id="image1805"
+       x="1.0583335"
+       y="1.0583335" />
+  </g>
+</svg>
