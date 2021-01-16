@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../../assets/styles/components/blog/Tag.scss';
+
 interface TagProps {
   link: string;
   name: string;
@@ -8,8 +10,8 @@ interface TagProps {
 
 function Tag({ link, name, count }: TagProps) {
   return (
-    <a href={link}>
-      <span className="Post__caption">
+    <a className="Tag" href={link}>
+      <span className="Tag__body">
         {name} ({count})
       </span>
     </a>

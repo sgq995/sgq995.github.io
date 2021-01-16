@@ -6,9 +6,15 @@ import Separator from '../components/blog/Separator';
 import '../assets/styles/pages/Blog.scss';
 
 function Blog() {
-  const posts = [{
+  const posts: React.ComponentProps<typeof Post>[] = [{
     title: 'Lorem ipsum',
     subtitle: 'Dolor sit amet',
+    date: new Date,
+    tags: [{
+      name: 'lorem ipsum',
+      link: '#',
+      count: 1
+    }],
     paragraphs: [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis lorem, pulvinar ac neque in, tincidunt feugiat libero. Sed laoreet at mi at convallis. Cras in tincidunt tortor, nec volutpat est. Sed pretium sodales nisl, ac hendrerit libero luctus sit amet. Nam rutrum tempus justo, ac semper sapien.',
 
