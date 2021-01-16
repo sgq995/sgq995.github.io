@@ -4,6 +4,7 @@ import '../../assets/styles/components/navigation/Nav.scss';
 
 import twitterIcon from '../../assets/twitter-icon.svg';
 import githubIcon from '../../assets/github-icon.svg';
+import Search from './Search';
 
 class Nav extends React.Component {
   navRef = React.createRef<HTMLElement>();
@@ -22,7 +23,7 @@ class Nav extends React.Component {
   componentDidMount() {
     document.addEventListener('scroll', this.handleScrolling, false);
   }
-  
+
   componentWillUnmount() {
     document.removeEventListener('scroll', this.handleScrolling, false);
   }
@@ -36,9 +37,7 @@ class Nav extends React.Component {
           </li>
         </ul>
 
-        <form>
-          <input />
-        </form>
+        <Search />
 
         <ul className="Nav__list">
           <li className="Nav__item">

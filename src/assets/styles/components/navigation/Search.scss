@@ -1,0 +1,41 @@
+.Search__container {
+  padding: 8px;
+
+  background-color: #e6e6e6;
+
+  border-radius: 8px;
+  border: 1px solid transparent;
+
+  cursor: text;
+}
+
+.Search__container--highlight {
+  background-color: #fff;
+  border: 1px solid #d3d3d3;
+}
+
+.Search__input {
+  width: 100%;
+  
+  background-color: transparent;
+  color: #1d1d1d;
+  
+  border: none;
+  outline: none;
+  
+  font-size: 1rem;
+  
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  
+}
+
+.Search__input::placeholder {
+  color: #a1a1a1;
+}
+
+.Search__container--highlight {
+  .Search__input {
+    color: #1d1d1d;
+  }
+}
