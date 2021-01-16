@@ -15,15 +15,43 @@
   align-items: center;
 
   position: sticky;
+  // top: 0;
+
+  transition: box-shadow 0.5s linear, top 0.25s linear;
+}
+
+.Nav--shown {
   top: 0;
 
-  transition: box-shadow 1s linear;
+  // transition: top 0.25s linear;
 }
 
 .Nav--shadow {
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
 
-  transition: box-shadow 0.25s linear;
+  // transition: box-shadow 0.25s linear;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 768px) {
+  .Nav {
+    height: 70px;
+  }  
+
+  .Nav--hidden {
+    top: -70px
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .Nav {
+    height: 100px;
+  }
+
+  .Nav--hidden {
+    top: -100px;
+  }
 }
 
 .Nav__list {

@@ -7,14 +7,31 @@ import githubIcon from '../../assets/github-icon.svg';
 import Search from './Search';
 
 class Nav extends React.Component {
-  navRef = React.createRef<HTMLElement>();
+  private navRef = React.createRef<HTMLElement>();
+  private prevScrollpos: number = window.pageYOffset;
 
   handleScrolling = () => {
-    const scrollTop = document.scrollingElement?.scrollTop ?? 0;
-    const offsetHeight = this.navRef.current?.offsetHeight ?? 0;
+    const currentScrollPos = window.pageYOffset;
+    if (this.prevScrollpos > currentScrollPos) {
+      this.navRef.current?.classList.add('Nav--shown');
+      this.navRef.current?.classList.remove('Nav--hidden');
+    } else {
+      this.navRef.current?.classList.remove('Nav--shown');
+      this.navRef.current?.classList.add('Nav--hidden');
+    }
+    this.prevScrollpos = currentScrollPos;
 
-    if (scrollTop > (offsetHeight / 2)) {
-      this.navRef.current?.classList.add('Nav--shadow');
+    const scrollTop = document.scrollingElement?.scrollTop ?? 0;
+    // const offsetHeight = this.navRef.current?.offsetHeight ?? 0;
+
+    // if (scrollTop > (offsetHeight / 2)) {
+    if (this.navRef.current?.classList.contains('Nav--shown')) {
+      if (scrollTop > 0) {
+
+        this.navRef.current?.classList.add('Nav--shadow');
+      } else {
+        this.navRef.current?.classList.remove('Nav--shadow');
+      }
     } else {
       this.navRef.current?.classList.remove('Nav--shadow');
     }
