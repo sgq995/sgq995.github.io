@@ -29,17 +29,21 @@ function Post({ title, date, subtitle, tags, paragraphs }: PostProps) {
 
         {tags && tags.map(tag =>
           <Tag
+            key={`tag-${tag.name}`}
             {...tag}
           />
         )}
 
       </hgroup>
 
-      {paragraphs.map(paragraph => (
-        <p className="Post__body">
+      {paragraphs.map(paragraph =>
+        <p
+          key={paragraph}
+          className="Post__body"
+        >
           {paragraph}
         </p>
-      ))}
+      )}
 
       <footer className="Post__footer">
         {/* <Row>

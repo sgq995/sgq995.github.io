@@ -40,11 +40,12 @@ function Blog() {
         <Nav />
 
         <section className="Blog__content">
-          {posts.map(post => (
+          {posts.map(post =>
             <Post
+              key={`post-${post.title}-${post.date}`}
               {...post}
             />
-          ))}
+          )}
         </section>
       </div>
     </div>
