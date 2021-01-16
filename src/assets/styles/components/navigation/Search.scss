@@ -1,4 +1,10 @@
+.Search__form {
+  width: 100%;
+}
+
 .Search__container {
+  box-sizing: border-box;
+
   padding: 8px;
 
   height: 40px;
@@ -14,6 +20,38 @@
 .Search__container--highlight {
   background-color: #fff;
   border: 1px solid #d3d3d3;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 768px) {
+  .Search__container,
+  .Search__form {
+    max-width: 180px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .Search__container,
+  .Search__form {
+    max-width: 250px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .Search__container,
+  .Search__form {
+    max-width: 320px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {  
+  .Search__container,
+  .Search__form {
+    max-width: 480px;
+  }
 }
 
 .Search__input {

@@ -31,7 +31,10 @@ class Search extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form
+        className="Search__form"
+        onSubmit={this.handleSubmit}
+      >
         <div
           ref={this.containerRef}
           className="Search__container"
