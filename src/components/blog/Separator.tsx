@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Separator.css';
+import '../../assets/styles/components/blog/Separator.scss';
 
 function Separator() {
   return (

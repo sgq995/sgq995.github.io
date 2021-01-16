@@ -1,10 +1,9 @@
-import { render } from '@testing-library/react';
 import React from 'react';
 
-import './Nav.css';
+import '../../assets/styles/components/navigation/Nav.scss';
 
-import twitterIcon from '../assets/twitter-icon.svg';
-import githubIcon from '../assets/github-icon.svg';
+import twitterIcon from '../../assets/twitter-icon.svg';
+import githubIcon from '../../assets/github-icon.svg';
 
 class Nav extends React.Component {
   navRef = React.createRef<HTMLElement>();
