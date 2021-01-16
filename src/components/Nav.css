@@ -16,13 +16,13 @@
   position: sticky;
   top: 0;
 
-  transition: all 0.25s linear;
+  transition: box-shadow 1s linear;
 }
 
 .Nav--shadow {
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
 
-  transition: all 1s linear;
+  transition: box-shadow 0.25s linear;
 }
 
 .Nav__list {
@@ -39,4 +39,9 @@
 
 .Nav__item:first-child {
   margin-left: 0;
+}
+
+.Nav__icon {
+  width: 24px;
+  height: 24px;
 }

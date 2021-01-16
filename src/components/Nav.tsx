@@ -3,6 +3,9 @@ import React from 'react';
 
 import './Nav.css';
 
+import twitterIcon from '../assets/twitter-icon.svg';
+import githubIcon from '../assets/github-icon.svg';
+
 class Nav extends React.Component {
   navRef = React.createRef<HTMLElement>();
 
@@ -30,21 +33,27 @@ class Nav extends React.Component {
       <nav className="Nav" ref={this.navRef}>
         <ul className="Nav__list">
           <li className="Nav__item">
-            Link
-        </li>
-
-          <li className="Nav__item">
-            Searchbar
-        </li>
-
-          <li className="Nav__item">
-            ???
-        </li>
+            Portafolio
+          </li>
         </ul>
 
         <form>
           <input />
         </form>
+
+        <ul className="Nav__list">
+          <li className="Nav__item">
+            <a href="https://twitter.com/segoqu95">
+              <img className="Nav__icon" alt="Twitter" src={twitterIcon} />
+            </a>
+          </li>
+
+          <li className="Nav__item">
+            <a href="https://github.com/sgq995">
+              <img className="Nav__icon" alt="GitHub" src={githubIcon} />
+            </a>
+          </li>
+        </ul>
       </nav>
     );
   }
