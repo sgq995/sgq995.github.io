@@ -1,0 +1,12 @@
+{{ define "main" }}
+
+<div>Homepage Template</div>
+
+<div>
+  {{ range .Site.RegularPages }}
+  <a href="{{ .RelPermalink }}">{{ partial "post-preview.html" . }}</a>
+  {{end}}
+</div>
+
+<!-- /main -->
+{{ end }}
