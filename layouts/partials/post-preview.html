@@ -1,0 +1,10 @@
+<article class="post-preview">
+  <div class="post-preview__content">
+    <h2 class="text-heading2">{{ .Title }}</h2>
+    <p class="text-content1">{{ .Description }}</p>
+  </div>
+
+  <div class="post-preview__arrow">
+    {{ partial "icon" (dict "IconName" "arrow-right") }}
+  </div>
+</article>
