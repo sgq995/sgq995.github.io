@@ -23,8 +23,8 @@
 
   --radius: 8px;
 
-  --gutter: 0.5rem;
-  --margin: 1rem;
+  --gutter: 0.25rem;
+  --margin: 0.5rem;
 
   --font-primary: Merriweather, serif;
   --font-secondary: Lato, sans-serif;
@@ -33,6 +33,14 @@
   --font-size-md: 1rem;
   --font-size-lg: 1.5rem;
   --font-size-xl: 2rem;
+}
+
+/* md */
+@media screen and (min-width: 768px) {
+  :root {
+    --gutter: 0.5rem;
+    --margin: 1rem;
+  }
 }
 
 html,
@@ -108,6 +116,23 @@ a {
 
 .text-link:active {
   color: var(--link-tertiary);
+}
+
+/* Main */
+.main {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+}
+
+/* Content */
+.content {
+  width: 100%;
+  max-width: 800px;
+
+  padding: var(--margin);
 }
 
 /* Post List */

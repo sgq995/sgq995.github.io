@@ -1,24 +1,22 @@
 {{ define "main" }}
 
-<div>Homepage Template</div>
+<div class="content">
+  {{ $lastDate := "" }}
+  <section class="post-list">
+    {{ range .Site.RegularPages }}
+    
+    {{ $currentDate := (.Date.Format "January 2006") }}
+    {{ if ne $currentDate $lastDate }}
+    {{ $lastDate = .Date.Format "January 2006" }}
+    <span class="post-list__date text-body1">{{ $lastDate }}</span>
+    {{ else }}
+    <span></span>
+    {{ end }}
 
-{{ .Site.RegularPages }}
-
-{{ $lastDate := "" }}
-<section class="post-list">
-  {{ range .Site.RegularPages }}
-  
-  {{ $currentDate := (.Date.Format "January 2006") }}
-  {{ if ne $currentDate $lastDate }}
-  {{ $lastDate = .Date.Format "January 2006" }}
-  <span class="post-list__date text-body1">{{ $lastDate }}</span>
-  {{ else }}
-  <span></span>
-  {{ end }}
-
-  <a href="{{ .RelPermalink }}">{{ partial "post-preview.html" . }}</a>
-  {{end}}
-</section>
+    <a href="{{ .RelPermalink }}">{{ partial "post-preview.html" . }}</a>
+    {{end}}
+  </section>
+</div>
 
 <!-- /main -->
 {{ end }}
