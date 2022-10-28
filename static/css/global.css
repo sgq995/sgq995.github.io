@@ -110,6 +110,21 @@ a {
   color: var(--link-tertiary);
 }
 
+/* Post List */
+.post-list {
+  display: grid;
+  gap: var(--gutter);
+  grid-template-columns: auto 1fr;
+}
+
+.post-list__date {
+  background-color: var(--bg-secondary);
+  padding: var(--margin);
+  position: sticky;
+  top: -1px;
+}
+
+/* Post Preview */
 .post-preview {
   padding: var(--gutter);
 

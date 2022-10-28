@@ -2,11 +2,23 @@
 
 <div>Homepage Template</div>
 
-<div>
+{{ .Site.RegularPages }}
+
+{{ $lastDate := "" }}
+<section class="post-list">
   {{ range .Site.RegularPages }}
+  
+  {{ $currentDate := (.Date.Format "January 2006") }}
+  {{ if ne $currentDate $lastDate }}
+  {{ $lastDate = .Date.Format "January 2006" }}
+  <span class="post-list__date text-body1">{{ $lastDate }}</span>
+  {{ else }}
+  <span></span>
+  {{ end }}
+
   <a href="{{ .RelPermalink }}">{{ partial "post-preview.html" . }}</a>
   {{end}}
-</div>
+</section>
 
 <!-- /main -->
 {{ end }}
