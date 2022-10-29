@@ -1,0 +1,15 @@
+{{ define "main" }}
+<div class="content">
+  <section class="post">
+    <h1 class="text-heading1">{{ .Title }}</h1>
+    <div class="my-1">
+      <span class="text-content2"
+        >{{ .Date | time.Format ":date_medium" }}</span
+      >
+    </div>
+    <h2 class="text-heading2">{{ .Description }}</h2>
+
+    <article class="post__content mt-1 text-content1">{{ .Content }}</article>
+  </section>
+</div>
+{{ end }}

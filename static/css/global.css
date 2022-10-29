@@ -1,3 +1,4 @@
+/* Theme */
 :root {
   --gray-50: #f9fafb;
   --gray-200: #e5e7eb;
@@ -23,8 +24,8 @@
 
   --radius: 8px;
 
-  --gutter: 0.25rem;
-  --margin: 0.5rem;
+  --gutter: 0.5rem;
+  --margin: 1rem;
 
   --font-primary: Merriweather, serif;
   --font-secondary: Lato, sans-serif;
@@ -38,11 +39,12 @@
 /* md */
 @media screen and (min-width: 768px) {
   :root {
-    --gutter: 0.5rem;
-    --margin: 1rem;
+    --gutter: 0.75rem;
+    --margin: 1.5rem;
   }
 }
 
+/* Resets */
 html,
 body {
   margin: 0;
@@ -52,6 +54,7 @@ body {
   color: var(--text-primary);
 }
 
+h1,
 h2,
 p {
   margin: 0;
@@ -63,6 +66,7 @@ a {
   text-decoration: none;
 }
 
+/* Utilities */
 .text-body1 {
   font-family: var(--font-secondary);
   font-size: var(--font-size-md);
@@ -118,13 +122,22 @@ a {
   color: var(--link-tertiary);
 }
 
+.my-1 {
+  margin: var(--margin) 0;
+}
+
+.mt-1 {
+  margin-top: var(--margin);
+}
+
 /* Main */
 .main {
   width: 100%;
   min-height: 100vh;
 
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Content */
@@ -132,7 +145,7 @@ a {
   width: 100%;
   max-width: 800px;
 
-  padding: var(--margin);
+  margin: var(--margin);
 }
 
 /* Post List */
@@ -177,4 +190,27 @@ a {
 
 .post-preview:hover .post-preview__arrow {
   opacity: 1;
+}
+
+/* Post */
+.post {
+  padding: var(--margin);
+}
+
+@media screen and (min-width: 768px) {
+  .post {
+    padding: 0;
+  }
+}
+
+.post__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter);
+}
+
+.post__content p {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-md);
+  line-height: 1.2;
 }
