@@ -1,6 +1,10 @@
+{{ $IconSize := "24" }}
+{{ if isset . "IconSize" }}
+  {{ $IconSize = .IconSize }}
+{{ end }}
 <img
   src="/icons/{{ .IconName }}.svg"
   alt="{{ .IconName }}"
-  width="24"
-  height="24"
+  width="{{ $IconSize }}"
+  height="{{ $IconSize }}"
 />

@@ -1,16 +1,22 @@
 {{ define "overlay" }}
-<div class="nav__root">
+<div class="nav__root hidden">
   <aside class="nav__container">
     <div class="navbar">
+      <button class="navbar__close">
+        {{ partial "icon" (dict "IconName" "x-mark" "IconSize" "32") }}
+      </button>
+
       <nav class="navbar__content">
         {{ $currentLink := .RelPermalink }}
         
         {{ range .Site.RegularPages }}
-          {{ if eq $currentLink .RelPermalink }}
-            <span>{{ .Title }}</span>
-          {{ else }}
-            <a class="link" href="{{ .RelPermalink }}">{{ .Title }}</a>
-          {{ end }}
+          <div>
+            {{ if eq $currentLink .RelPermalink }}
+              <span>{{ .Title }}</span>
+            {{ else }}
+              <a class="link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{ end }}
+          </div>
         {{end}}
       </nav>
     </div>
@@ -19,6 +25,12 @@
 {{ end }}
 
 {{ define "main" }}
+<div class="menu__root">
+  <button class="menu__open">
+    {{ partial "icon" (dict "IconName" "bars-3" "IconSize" "32") }}
+  </button>
+</div>
+
 <div class="content">
   <section class="post">
     <h1 class="text-heading1">{{ .Title }}</h1>
@@ -37,4 +49,8 @@
     <article class="post__content mt-1 text-content1">{{ .Content }}</article>
   </section>
 </div>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="/js/post-view.js"></script>
 {{ end }}
