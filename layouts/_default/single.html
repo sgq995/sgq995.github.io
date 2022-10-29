@@ -9,6 +9,11 @@
     </div>
     <h2 class="text-heading2">{{ .Description }}</h2>
 
+    {{ if ne .TableOfContents "" }}
+    <h6 class="font-primary font-sm mt-1 gb-1">CONTENTS</h6>
+    {{ .TableOfContents }}
+    {{ end }}
+
     <article class="post__content mt-1 text-content1">{{ .Content }}</article>
   </section>
 </div>
