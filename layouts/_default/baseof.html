@@ -29,5 +29,7 @@
     <main class="main">{{ block "main" . }} {{ end }}</main>
 
     {{ block "scripts" . }} {{ end }}
+
+    {{ template "_internal/google_analytics.html" . }}
   </body>
 </html>
