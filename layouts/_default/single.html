@@ -8,8 +8,15 @@
 
       <nav class="navbar__content">
         {{ $currentLink := .RelPermalink }}
+        {{ $lastDate := "" }}
         
         {{ range .Site.RegularPages }}
+          {{ $currentDate := (.Date.Format "January 2006") }}
+          {{ if ne $currentDate $lastDate }}
+            {{ $lastDate = .Date.Format "January 2006" }}
+            <span class="navbar__date">{{ $lastDate }}</span>
+          {{ end }}
+
           <div>
             {{ if eq $currentLink .RelPermalink }}
               <span>{{ .Title }}</span>
@@ -35,13 +42,13 @@
   <section class="post">
     <h1 class="text-heading1">{{ .Title }}</h1>
     <div class="my-1">
-      <span class="text-content2"
-        >{{ .Date | time.Format ":date_medium" }}</span
-      >
+      <span class="text-content2">
+        {{ .Date | time.Format ":date_medium" }}
+      </span>
     </div>
     <h2 class="text-heading2">{{ .Description }}</h2>
 
-    {{ if ne .TableOfContents "" }}
+    {{ if ne .TableOfContents "<nav id=\"TableOfContents\"></nav>" }}
     <h6 class="font-primary font-sm mt-1 gb-1">CONTENTS</h6>
     {{ .TableOfContents }}
     {{ end }}
