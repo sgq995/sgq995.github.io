@@ -1,3 +1,23 @@
+{{ define "overlay" }}
+<div class="nav__root">
+  <aside class="nav__container">
+    <div class="navbar">
+      <nav class="navbar__content">
+        {{ $currentLink := .RelPermalink }}
+        
+        {{ range .Site.RegularPages }}
+          {{ if eq $currentLink .RelPermalink }}
+            <span>{{ .Title }}</span>
+          {{ else }}
+            <a class="link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ end }}
+        {{end}}
+      </nav>
+    </div>
+  </aside>
+</div>
+{{ end }}
+
 {{ define "main" }}
 <div class="content">
   <section class="post">
