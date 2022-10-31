@@ -243,16 +243,18 @@ a:visited {
 .nav__root {
   position: fixed;
   inset: 0;
-  left: -100%;
+  /* left: -100%; */
   z-index: 1300;
   
-  /* pointer-events: none; */
+  pointer-events: none;
 
-  transition: left 250ms ease-in;
+  /* transform: translateX(-100%); */
+
+  /* transition: transform 250ms ease-in; */
 }
 
 .nav__root--shown {
-  left: 0;
+  /* transform: translateX(0); */
 }
 
 .nav__container {
@@ -273,7 +275,15 @@ a:visited {
 
   pointer-events: all;
 
-  position: relative;  
+  position: relative;
+
+  transform: translateX(-100%);
+
+  transition: transform 250ms ease-in;
+}
+
+.nav__root--shown .navbar {
+  transform: translateX(0);
 }
 
 @media screen and (min-width: 768px) {
@@ -344,12 +354,12 @@ a:visited {
   top: var(--margin);
   /* left: var(--margin); */
 
-  transition: top 250ms ease-in;
+  transition: transform 250ms ease-in;
 }
 
 .menu__root--hidden {
   position: fixed;
-  top: calc(-1 * var(--margin) - 48px);
+  transform: translateY(calc(-1 * var(--margin) - 48px));
 }
 
 .menu__open {
