@@ -1,14 +1,14 @@
-baseURL = "https://sgq995.github.io/"
-languageCode = "es-co"
-title = "Sebastian"
+baseURL = "http://www.example.com"
+title = "Minimo"
+# for smart copyright line, leave this blank and check [params.copyright]
 copyright = ""
 
 theme = "minimo"
 
 disqusShortname = ""
-googleAnalytics = "G-5QVY3N6YS4"
+googleAnalytics = ""
 
-Paginate = 10
+Paginate = 5
 preserveTaxonomyNames = true
 
 enableRobotsTXT = true # generate robots.txt
@@ -19,22 +19,22 @@ pygmentsCodefences = true
 enableEmoji = true
 
 # Missing translations will default to this content language
-defaultContentLanguage = "es"
+defaultContentLanguage = "en"
 
 [params.info]
-description = ""
+description = "Minimalist theme for Hugo"
 title404 = "Nothing's here!"
 
 [params.assets]
 favicon = "favicon.ico"
-customCSS = []
-customJS = []
+customCSS = ["css/custom.css"]
+customJS = ["js/custom.js"]
 gopher = "" # used in 404 template ( Generator: https://gopherize.me )
 
 [params.copyright]
 prefix = ""
-holder = "Sebastian"
-startYear = "2022"
+holder = "MunifTanjim"
+startYear = "2017"
 suffix = ""
 
 [params.settings]
@@ -55,9 +55,9 @@ enable = true
 
 [params.widgets]
 header = ["breadcrumbs"]
-homepage = ["search","recent_posts"]
-sidebar = ["about","sidebar_menu","social_menu"]
-footer = ["taxonomy_cloud"]
+homepage = ["recent_posts"]
+sidebar = ["about","search","sidebar_menu","taxonomy_cloud"]
+footer = ["social_menu"]
 
 [params.opengraph.facebook]
 admins = [] # array of Facebook IDs
@@ -65,24 +65,24 @@ appID = ""
 pageID = ""
 
 [params.opengraph.twitter]
-page = "segoqu95" # Twitter page username
+page = "" # Twitter page username
 
 [params.seo]
 # Title Separator: - – — · • * ⋆ | ~ « » < >
-titleSeparator = "~"
+titleSeparator = "•"
 
 [params.social]
-codepen = ""
-email = "sgq995@gmail.com"
-facebook = ""
-github = "sgq995"
-gitlab = ""
-instagram = ""
-linkedin = "sebastian-gonzalez-quintero"
-twitter = "segoqu95"
-telegram = ""
-google_scholar = ""
-youtube = "UC34uuChc62fSICQ3_e0YTJQ"
+codepen = "MunifTanjim"
+email = "contact@example.com"
+facebook = "MunifTanjim"
+github = "MunifTanjim"
+gitlab = "MunifTanjim"
+instagram = "MunifTanjim"
+linkedin = "muniftanjim"
+twitter = "MunifTanjim"
+telegram = "MunifTanjim"
+google_scholar = "qc6CJjYAAAAJ"
+youtube = "UCT-U0rNerYxItGcuoPX-WYA"
 
 [params.comments]
 enable = false
@@ -94,11 +94,11 @@ scriptSrc = "" # "https://isso.example.com/js/embed.min.js"
 dataAttrs = "" # "data-isso='https://isso.example.com' data-isso-require-author='true'"
 
 [params.comments.staticman]
-enable = false
+enable = true
 apiEndpoint = "https://api.staticman.net/v2/entry"
 maxDepth = 2
-username = ""
-repository = ""
+username = "MunifTanjim"
+repository = "minimo"
 
 # Utterances: https://utteranc.es
 [params.comments.utterances]
@@ -108,8 +108,8 @@ label = ""
 theme = "github-light"
 
 [params.comments.utterances.github]
-username = ""
-repository = ""
+username = "MunifTanjim"
+repository = "minimo"
 
 [params.search]
 client = "fuse" # algolia / fuse / lunr
@@ -120,7 +120,7 @@ indexName = ""
 searchApiKey = ""
 
 [taxonomies]
-# author = "authors"
+author = "authors"
 category = "categories"
 series = "series"
 tag = "tags"
@@ -128,22 +128,18 @@ tag = "tags"
 [permalinks]
 page = "/:slug/"
 
-# [[menu.main]]
-# name = "Repo"
-# weight = -10
-# identifier = "repository"
-# url = "https://github.com/sgq995/sgq995.github.io"
+[[menu.main]]
+name = "Repo"
+weight = -10
+identifier = "repository"
+url = "https://github.com/MunifTanjim/minimo"
 
 [blackfriday]
 hrefTargetBlank = true
 
 [languages]
 # edit this block for your own language
-[languages.es]
-lang = "es"
-languageName = "Español"
-weight = 1
 [languages.en]
 lang = "en"
 languageName = "English"
-weight = 2
+weight = 1
