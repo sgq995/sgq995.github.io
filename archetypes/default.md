@@ -1,9 +1,10 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
-slug: ""
-description: ""
-keywords: []
+date: "{{ .Date }}"
+title: "{{ replace .TranslationBaseName '-' ' ' | title }}"
+authors: []
+categories:
+  -
+tags:
+  -
 draft: true
-tags: []
 ---

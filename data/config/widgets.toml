@@ -7,7 +7,7 @@ logo = "images/logo.png"              # default: "images/logo.png"
 # Breadcrumbs Widget config
 [breadcrumbs]
 separator = "/"                      # default: "/"
-excludeParents = ["page"]            # default: ["page"]
+excludeParents = ["page", "home"]    # default: ["page"]
 
 # Recent Posts Widget config
 [recent_posts]
