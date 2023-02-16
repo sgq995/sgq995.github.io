@@ -47,7 +47,7 @@ hideEntryMeta = ["page"] # boolean / array of sections
 showReadingTime = true
 showLastmod = true
 taxonomyCloudShuffle = true
-accentColor = "#ffcd00"
+accentColor = "#0ea5e9"
 hideMainMenu = false
 
 [params.sidebar]
