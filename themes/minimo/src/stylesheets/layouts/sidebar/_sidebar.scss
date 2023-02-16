@@ -1,26 +1,23 @@
 .sidebar {
-  visibility: hidden;
-
-  float: left;
-  left: -$sidebar__width;
-  position: absolute;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translateX(-100%);
 
   width: $sidebar__width;
   max-width: 100%;
-  min-height: 100%;
+  height: 100vh;
   padding: 2em 0;
-  margin-right: -100%;
 
   outline: 0;
-  z-index: 99999;
-  transition: left $transition-duration;
+  z-index: $zindex__sidebar;
+  transition: transform $transition-duration;
 
   text-align: right;
   background: $color__pure-white;
 
   &.toggled {
-    visibility: visible;
-    left: 0;
+    transform: translateX(0);
   }
 
   .sep-after {
@@ -30,8 +27,11 @@
   }
 
   @include screen($breakpoint-medium) {
-    visibility: visible;
-    left: 0;
+    position: sticky;
+    left: unset;
+    top: 0;
+
+    transform: translateX(0);
   }
 }
 
@@ -90,10 +90,12 @@
 }
 
 .sidebar-overlay {
-  display: none;
+  opacity: 0;
 
-  .sidebar.toggled & {
-    display: block;
+  transition: opacity $transition-duration;
+
+  .sidebar-is-shown & {
+    opacity: 1;
 
     &:after {
       content: '';
@@ -103,7 +105,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      z-index: -2027;
+      z-index: $zindex__sidebar-overlay;
 
       background: $color__pure-white;
       opacity: 0.75;

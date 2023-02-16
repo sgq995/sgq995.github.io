@@ -4,27 +4,34 @@ body {
 
 .site {
   overflow-x: hidden;
+
+  min-height: 100vh;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  
+  @include screen($breakpoint-medium) {
+    overflow-x: initial;
+
+    max-width: 1080px;
+  }
 }
 
 .main {
-  width: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
+
   padding: 2em 0;
 
-  transition: margin-left $transition-duration;
+  transition: transform $transition-duration;
 
   .sidebar.toggled ~ & {
-    margin-left: $sidebar__width;
+    transform: translateX($sidebar__width);
   }
 
   @include screen($breakpoint-medium) {
-    width: auto;
-
-    .has-sidebar & {
-      float: left;
-      width: calc(100% - #{$sidebar__width});
-      margin-left: $sidebar__width;
-      padding-left: 2em;
-    }
+    flex-grow: 1;
   }
 }
 
