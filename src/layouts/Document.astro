@@ -1,11 +1,15 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
+import Head from '../components/head/Head.astro';
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <BaseHead title="" description="" />
+    <Head>
+      <slot name="head" />
+    </Head>
   </head>
-  <body> </body>
+  <body>
+    <slot />
+  </body>
 </html>
