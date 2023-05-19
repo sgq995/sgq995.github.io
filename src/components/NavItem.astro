@@ -1,0 +1,14 @@
+---
+export interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+
+const isCurrentPage = Astro.url.pathname.endsWith(href);
+const ariaCurrent = isCurrentPage ? "page" : null;
+---
+
+<li class:list={["text-lg", isCurrentPage && "font-bold"]}>
+  <a class="link" aria-current={ariaCurrent} href={href}><slot /></a>
+</li>

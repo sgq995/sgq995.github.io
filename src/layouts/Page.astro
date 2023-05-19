@@ -1,12 +1,12 @@
 ---
-import { Icon } from "astro-icon";
 import Separator from "../components/Separator.astro";
 import Meta from "../components/head/Meta.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../config";
 import { getLangFromUrl, getTransalations } from "../i18n";
 import Document from "./Document.astro";
-import IconLink from "../components/IconLink.astro";
 import Typography from "../components/Typography.astro";
+import NavItem from "../components/NavItem.astro";
+import Social from "../components/Social.astro";
 
 export interface Props {
   title?: string;
@@ -47,23 +47,15 @@ const t = getTransalations(lang);
 
       <nav>
         <ul>
-          <li>
-            <a href="/">{t("nav.home")}</a>
-          </li>
+          <NavItem href="/">{t("nav.home")}</NavItem>
+
+          <NavItem href="/p">{t("nav.posts")}</NavItem>
         </ul>
       </nav>
 
       <Separator color="secondary" />
 
-      <div class="flex gap-2">
-        <IconLink href="https://github.com/sgq995">
-          <Icon pack="tabler" name="brand-github" />
-        </IconLink>
-
-        <IconLink href="https://twitter.com/segoqu95">
-          <Icon pack="tabler" name="brand-twitter" />
-        </IconLink>
-      </div>
+      <Social />
     </aside>
 
     <main class="flex-grow">

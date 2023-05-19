@@ -1,0 +1,8 @@
+.link {
+  @apply text-slate-600;
+
+  &:hover,
+  &:active {
+    @apply text-slate-950;
+  }
+}

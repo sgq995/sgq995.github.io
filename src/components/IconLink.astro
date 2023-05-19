@@ -7,7 +7,13 @@ export interface Props {
 const { href, alt } = Astro.props;
 ---
 
-<a title={alt} href={href} target="_blank" rel="noopener noreferer">
+<a
+  class="link"
+  title={alt}
+  href={href}
+  target="_blank"
+  rel="noopener noreferer"
+>
   <slot />
 </a>
 
@@ -16,13 +22,13 @@ const { href, alt } = Astro.props;
     :global(svg) {
       @apply w-6;
       @apply h-6;
-      @apply text-slate-600;
+      // @apply text-slate-600;
     }
 
     &:hover,
     &:focus {
       :global(svg) {
-        @apply text-slate-950;
+        // @apply text-slate-950;
       }
     }
   }
