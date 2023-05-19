@@ -1,0 +1,17 @@
+---
+export interface Props {
+  color?: "primary" | "secondary";
+}
+
+const { color = "primary" } = Astro.props;
+---
+
+<hr
+  class:list={[
+    "my-6 w-24 border-t-2",
+    {
+      "border-t-sky-500": color === "primary",
+      "border-t-slate-300": color === "secondary",
+    },
+  ]}
+/>

@@ -1,0 +1,63 @@
+---
+export interface Props {
+  variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "body1" | "body2";
+}
+
+const { variant = "body1" } = Astro.props;
+---
+
+{
+  variant === "h1" && (
+    <h1>
+      <slot />
+    </h1>
+  )
+}
+
+{
+  variant === "h2" && (
+    <h2 class="text-3xl font-bold">
+      <slot />
+    </h2>
+  )
+}
+
+{
+  variant === "h3" && (
+    <h3>
+      <slot />
+    </h3>
+  )
+}
+
+{
+  variant === "h4" && (
+    <h4>
+      <slot />
+    </h4>
+  )
+}
+
+{
+  variant === "h6" && (
+    <h6>
+      <slot />
+    </h6>
+  )
+}
+
+{
+  variant === "body1" && (
+    <span>
+      <slot />
+    </span>
+  )
+}
+
+{
+  variant === "body2" && (
+    <span>
+      <slot />
+    </span>
+  )
+}
