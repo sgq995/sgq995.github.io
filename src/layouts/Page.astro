@@ -4,9 +4,9 @@ import Meta from "../components/head/Meta.astro";
 import { getLangFromUrl, getTransalations } from "../i18n";
 import Document from "./Document.astro";
 import Typography from "../components/Typography.astro";
-import NavItem from "../components/NavItem.astro";
-import Social from "../components/Social.astro";
-import Breadcrumb from "../components/Breadcrumb.astro";
+import NavItem from "../components/navigation/NavItem.astro";
+import Social from "../components/header/Social.astro";
+import Breadcrumb from "../components/navigation/Breadcrumb.astro";
 
 export interface Props {
   title?: string;
@@ -19,14 +19,12 @@ const t = getTransalations(lang);
 const SITE_TITLE = t("site.title");
 const SITE_DESCRIPTION = t("site.description");
 
-const { title = SITE_TITLE, description = SITE_DESCRIPTION } =
-  Astro.props;
+const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 
 const shouldIncludeMeta =
   typeof title === "string" && typeof description === "string";
 
-const finalTitle =
-  title === SITE_TITLE ? title : `${title} ~ ${SITE_TITLE}`;
+const finalTitle = title === SITE_TITLE ? title : `${title} ~ ${SITE_TITLE}`;
 ---
 
 <Document>

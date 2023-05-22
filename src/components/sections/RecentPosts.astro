@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import Typography from "./Typography.astro";
-import { LocaleKey, getLangFromUrl, getTransalations } from "../i18n";
+import Typography from "../Typography.astro";
+import { LocaleKey, getLangFromUrl, getTransalations } from "../../i18n";
 
 const lang = getLangFromUrl(Astro.url);
 const t = getTransalations(lang);
