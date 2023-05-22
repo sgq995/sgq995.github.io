@@ -1,0 +1,49 @@
+---
+import { getCollection } from "astro:content";
+import Typography from "./Typography.astro";
+import { LocaleKey, getLangFromUrl, getTransalations } from "../i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = getTransalations(lang);
+
+function formatDate(date: Date) {
+  const year = date.getFullYear();
+  const monthString: LocaleKey = `month.${
+    date.getMonth() as 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
+  }`;
+  const month = t(monthString);
+  const day = date.getDate();
+
+  return `${year}, ${month} ${day}`;
+}
+
+const posts = await getCollection("blog");
+const entries = posts.slice(0, 5).map((post) => ({
+  date: post.data.pubDate,
+  title: post.data.title,
+  href: post.slug,
+}));
+---
+
+<div class="entries">
+  {
+    entries.map((entry) => (
+      <>
+        <Typography variant="body2">{formatDate(entry.date)}</Typography>
+
+        <a class="link" href={`/p/${entry.href}`}>
+          {entry.title}
+        </a>
+      </>
+    ))
+  }
+</div>
+
+<style lang="scss">
+  .entries {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    @apply gap-x-8;
+    @apply gap-y-2;
+  }
+</style>

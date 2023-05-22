@@ -1,5 +1,13 @@
 ---
-import Page from '../layouts/Page.astro';
+import RecentPosts from "../components/RecentPosts.astro";
+import Separator from "../components/Separator.astro";
+import Page from "../layouts/Page.astro";
 ---
 
-<Page />
+<Page>
+  <Separator />
+
+  <section>
+    <RecentPosts />
+  </section>
+</Page>

@@ -14,7 +14,6 @@ type PageItem = {
 };
 
 const paths = Array.from(new Set(Astro.url.pathname.split("/")));
-console.log(Astro.url.pathname, { paths });
 const items = paths
   .reduce((list: string[], path) => {
     const basepath = list.join("/").replace(/\/$/, "");

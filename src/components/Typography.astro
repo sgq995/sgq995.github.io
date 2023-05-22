@@ -12,14 +12,15 @@ const ELEMENT_MAP = {
 
 export interface Props {
   variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "body1" | "body2";
+  className?: string;
 }
 
-const { variant = "body1" } = Astro.props;
+const { variant = "body1", className } = Astro.props;
 ---
 
 {
   variant === "h1" && (
-    <h1>
+    <h1 class={className}>
       <slot />
     </h1>
   )
@@ -27,7 +28,7 @@ const { variant = "body1" } = Astro.props;
 
 {
   variant === "h2" && (
-    <h2 class="text-3xl font-bold">
+    <h2 class:list={[className, "text-3xl font-bold"]}>
       <slot />
     </h2>
   )
@@ -35,7 +36,7 @@ const { variant = "body1" } = Astro.props;
 
 {
   variant === "h3" && (
-    <h3>
+    <h3 class={className}>
       <slot />
     </h3>
   )
@@ -43,7 +44,7 @@ const { variant = "body1" } = Astro.props;
 
 {
   variant === "h4" && (
-    <h4>
+    <h4 class={className}>
       <slot />
     </h4>
   )
@@ -51,7 +52,7 @@ const { variant = "body1" } = Astro.props;
 
 {
   variant === "h6" && (
-    <h6>
+    <h6 class={className}>
       <slot />
     </h6>
   )
@@ -59,7 +60,7 @@ const { variant = "body1" } = Astro.props;
 
 {
   variant === "body1" && (
-    <span>
+    <span class={className}>
       <slot />
     </span>
   )
@@ -67,7 +68,7 @@ const { variant = "body1" } = Astro.props;
 
 {
   variant === "body2" && (
-    <span>
+    <span class:list={[className, "text-slate-900"]}>
       <slot />
     </span>
   )

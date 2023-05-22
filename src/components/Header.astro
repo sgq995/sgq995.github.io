@@ -1,6 +1,11 @@
 ---
-import { SITE_TITLE } from '../config';
-import HeaderLink from './HeaderLink.astro';
+import { getLangFromUrl, getTransalations } from "../i18n";
+import HeaderLink from "./HeaderLink.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = getTransalations(lang);
+
+const SITE_TITLE = t("site.title");
 ---
 
 <header>

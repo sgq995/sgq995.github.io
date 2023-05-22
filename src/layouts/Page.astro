@@ -1,7 +1,6 @@
 ---
 import Separator from "../components/Separator.astro";
 import Meta from "../components/head/Meta.astro";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../config";
 import { getLangFromUrl, getTransalations } from "../i18n";
 import Document from "./Document.astro";
 import Typography from "../components/Typography.astro";
@@ -14,19 +13,26 @@ export interface Props {
   description?: string;
 }
 
-const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = getTransalations(lang);
+
+const SITE_TITLE = t("site.title");
+const SITE_DESCRIPTION = t("site.description");
+
+const { title = SITE_TITLE, description = SITE_DESCRIPTION } =
+  Astro.props;
 
 const shouldIncludeMeta =
   typeof title === "string" && typeof description === "string";
 
-const lang = getLangFromUrl(Astro.url);
-const t = getTransalations(lang);
+const finalTitle =
+  title === SITE_TITLE ? title : `${title} ~ ${SITE_TITLE}`;
 ---
 
 <Document>
   {
     shouldIncludeMeta && (
-      <Meta slot="head" title={title} description={description} />
+      <Meta slot="head" title={finalTitle} description={description} />
     )
   }
 
