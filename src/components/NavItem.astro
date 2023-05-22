@@ -1,14 +1,28 @@
 ---
 export interface Props {
   href: string;
+  align?: "left" | "right";
+  inline?: boolean;
+  className?: string;
 }
 
-const { href } = Astro.props;
+const { href, align = "left", inline = false, className } = Astro.props;
 
 const isCurrentPage = Astro.url.pathname.endsWith(href);
 const ariaCurrent = isCurrentPage ? "page" : null;
 ---
 
-<li class:list={["text-lg", isCurrentPage && "font-bold"]}>
+<li
+  class:list={[
+    className,
+    "text-lg",
+    {
+      "inline-block": inline,
+      "text-left": align === "left",
+      "text-right": align === "right",
+      "font-bold": isCurrentPage,
+    },
+  ]}
+>
   <a class="link" aria-current={ariaCurrent} href={href}><slot /></a>
 </li>

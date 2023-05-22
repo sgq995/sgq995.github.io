@@ -1,0 +1,56 @@
+---
+import { LocaleKey, getLangFromUrl, getTransalations } from "../i18n";
+import NavItem from "./NavItem.astro";
+
+const PATH_TO_LOCALE: Record<string, LocaleKey> = {
+  "/": "nav.home",
+  "/p": "nav.posts",
+};
+
+type PageItem = {
+  href: string;
+  content: LocaleKey;
+  isCurrentPage: boolean;
+};
+
+const paths = Array.from(new Set(Astro.url.pathname.split("/")));
+console.log(Astro.url.pathname, { paths });
+const items = paths
+  .reduce((list: string[], path) => {
+    const basepath = list.join("/").replace(/\/$/, "");
+    const fullpath = `${basepath}/${path}`;
+    list.push(fullpath);
+    return list;
+  }, [])
+  .reduce((list: PageItem[], fullpath) => {
+    list.push({
+      href: fullpath,
+      content: PATH_TO_LOCALE[fullpath],
+      isCurrentPage: Astro.url.pathname.endsWith(fullpath),
+    });
+    return list;
+  }, []);
+
+const lang = getLangFromUrl(Astro.url);
+const t = getTransalations(lang);
+---
+
+<nav>
+  <ol>
+    {
+      items.map((item) =>
+        item.isCurrentPage ? (
+          <li class="inline text-lg font-bold">{t(item.content)}</li>
+        ) : (
+          <NavItem
+            className="after:px-1 after:content-['/']"
+            inline
+            href={item.href}
+          >
+            {t(item.content)}
+          </NavItem>
+        )
+      )
+    }
+  </ol>
+</nav>

@@ -7,6 +7,7 @@ import Document from "./Document.astro";
 import Typography from "../components/Typography.astro";
 import NavItem from "../components/NavItem.astro";
 import Social from "../components/Social.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
 
 export interface Props {
   title?: string;
@@ -47,9 +48,9 @@ const t = getTransalations(lang);
 
       <nav>
         <ul>
-          <NavItem href="/">{t("nav.home")}</NavItem>
+          <NavItem href="/" align="right">{t("nav.home")}</NavItem>
 
-          <NavItem href="/p">{t("nav.posts")}</NavItem>
+          <NavItem href="/p" align="right">{t("nav.posts")}</NavItem>
         </ul>
       </nav>
 
@@ -58,8 +59,14 @@ const t = getTransalations(lang);
       <Social />
     </aside>
 
-    <main class="flex-grow">
-      <slot />
-    </main>
+    <div class="flex-grow px-6">
+      <section class="">
+        <Breadcrumb />
+      </section>
+
+      <main>
+        <slot />
+      </main>
+    </div>
   </div>
 </Document>
