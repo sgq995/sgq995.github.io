@@ -35,9 +35,12 @@ const finalTitle = title === SITE_TITLE ? title : `${title} ~ ${SITE_TITLE}`;
   }
 
   <div
-    class="container mx-auto flex min-h-screen max-w-5xl justify-center py-8"
+    class="container relative mx-auto flex min-h-screen max-w-5xl justify-center"
   >
-    <aside class="flex w-80 flex-col items-end">
+    <div class="absolute inset-0 -z-10 bg-gray-200 md:hidden"></div>
+    <aside
+      class="absolute bottom-0 left-0 top-0 z-0 flex w-80 -translate-x-80 flex-col items-end bg-white px-3 py-8 md:sticky md:translate-x-0"
+    >
       <header>
         <a href="/"><img src="/logo.svg" alt="" class="h-24 w-24" /></a>
 
@@ -63,7 +66,7 @@ const finalTitle = title === SITE_TITLE ? title : `${title} ~ ${SITE_TITLE}`;
       <Social />
     </aside>
 
-    <div class="flex-grow px-6">
+    <div class="flex-grow px-3 py-8">
       <section class="">
         <Breadcrumb />
       </section>

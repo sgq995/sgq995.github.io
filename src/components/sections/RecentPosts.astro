@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Typography from "../Typography.astro";
 import { LocaleKey, getLangFromUrl, getTransalations } from "../../i18n";
+import Section from "./Section.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = getTransalations(lang);
@@ -25,19 +26,21 @@ const entries = posts.slice(0, 5).map((post) => ({
 }));
 ---
 
-<div class="entries">
-  {
-    entries.map((entry) => (
-      <>
-        <Typography variant="body2">{formatDate(entry.date)}</Typography>
+<Section>
+  <div class="entries">
+    {
+      entries.map((entry) => (
+        <>
+          <Typography variant="body2">{formatDate(entry.date)}</Typography>
 
-        <a class="link" href={`/p/${entry.href}`}>
-          {entry.title}
-        </a>
-      </>
-    ))
-  }
-</div>
+          <a class="link" href={`/p/${entry.href}`}>
+            {entry.title}
+          </a>
+        </>
+      ))
+    }
+  </div>
+</Section>
 
 <style lang="scss">
   .entries {
