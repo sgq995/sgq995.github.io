@@ -7,6 +7,7 @@ import Typography from "../components/Typography.astro";
 import NavItem from "../components/navigation/NavItem.astro";
 import Social from "../components/header/Social.astro";
 import Breadcrumb from "../components/navigation/Breadcrumb.astro";
+import Aside from "../components/navigation/Aside";
 
 export interface Props {
   title?: string;
@@ -37,10 +38,7 @@ const finalTitle = title === SITE_TITLE ? title : `${title} ~ ${SITE_TITLE}`;
   <div
     class="container relative mx-auto flex min-h-screen max-w-5xl justify-center"
   >
-    <div class="absolute inset-0 -z-10 bg-gray-200 md:hidden"></div>
-    <aside
-      class="absolute bottom-0 left-0 top-0 z-0 flex w-80 -translate-x-80 flex-col items-end bg-white px-3 py-8 md:sticky md:translate-x-0"
-    >
+    <Aside client:load>
       <header>
         <a href="/"><img src="/logo.svg" alt="" class="h-24 w-24" /></a>
 
@@ -64,7 +62,7 @@ const finalTitle = title === SITE_TITLE ? title : `${title} ~ ${SITE_TITLE}`;
       <Separator color="secondary" />
 
       <Social />
-    </aside>
+    </Aside>
 
     <div class="flex-grow px-3 py-8">
       <section class="">
