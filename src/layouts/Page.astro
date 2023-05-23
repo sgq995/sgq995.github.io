@@ -36,7 +36,7 @@ const finalTitle = title === SITE_TITLE ? title : `${title} ~ ${SITE_TITLE}`;
   }
 
   <div
-    class="container relative mx-auto flex min-h-screen max-w-5xl justify-center"
+    class="min-h-small-screen container relative mx-auto flex min-h-screen max-w-5xl justify-center"
   >
     <Aside client:load>
       <header>
@@ -75,3 +75,9 @@ const finalTitle = title === SITE_TITLE ? title : `${title} ~ ${SITE_TITLE}`;
     </div>
   </div>
 </Document>
+
+<style lang="scss">
+  .min-h-small-screen {
+    min-height: 100svh !important;;
+  }
+</style>
