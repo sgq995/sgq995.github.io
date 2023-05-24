@@ -11,7 +11,7 @@ const FloatingActionButton: ParentComponent<FloatingActionButtonProps> = (
 
   return (
     <button
-      class="absolute bottom-8 left-8 z-10 rounded-full bg-sky-500 p-4 text-white shadow-lg"
+      class="fixed bottom-8 left-8 z-10 rounded-full bg-sky-500 p-4 text-white shadow-lg"
       onClick={props.onClick}
     >
       {icon()}
