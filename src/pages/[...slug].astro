@@ -1,12 +1,12 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
-import Page from "../../layouts/Page.astro";
-import Typography from "../../components/Typography.astro";
-import Separator from "../../components/Separator.astro";
+import Page from "../layouts/Page.astro";
+import Typography from "../components/Typography.astro";
+import Separator from "../components/Separator.astro";
 import { TbCalendar, TbClock } from "solid-icons/tb";
-import { formatDate } from "../../utilities/date.utility";
-import { getReadingTime } from "../../utilities/content.utility";
-import { getLangFromUrl, getTransalations } from "../../i18n";
+import { formatDate } from "../utilities/date.utility";
+import { getReadingTime } from "../utilities/content.utility";
+import { getLangFromUrl, getTransalations } from "../i18n";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");

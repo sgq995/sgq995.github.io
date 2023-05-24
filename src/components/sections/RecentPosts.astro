@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Typography from "../Typography.astro";
-import { LocaleKey, getLangFromUrl, getTransalations } from "../../i18n";
+import { getLangFromUrl, getTransalations } from "../../i18n";
 import Section from "./Section.astro";
 import { formatDate } from "../../utilities/date.utility";
 
@@ -28,7 +28,7 @@ const entries = posts
             {formatDate(Astro.url, entry.date)}
           </Typography>
 
-          <a class="link" href={`/p/${entry.href}`}>
+          <a class="link" href={`/${entry.href}`}>
             {entry.title}
           </a>
         </>
