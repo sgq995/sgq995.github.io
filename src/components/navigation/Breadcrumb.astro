@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import { LocaleKey, getLangFromUrl, getTransalations } from "../../i18n";
 import NavItem from "./NavItem.astro";
 
@@ -7,16 +8,27 @@ const PATH_TO_LOCALE: Record<string, LocaleKey> = {
   "/p": "nav.posts",
 };
 
+const posts = await getCollection("blog");
+
+function getContent(href: string) {
+  if (href.startsWith("/p/")) {
+    const post = posts.find((post) => post.slug === href.substring(3));
+    return post?.data.title ?? "";
+  }
+  
+  return "";
+}
+
 type PageItem = {
   href: string;
-  content: LocaleKey;
+  content?: LocaleKey;
   isCurrentPage: boolean;
 };
 
 const paths = Array.from(new Set(Astro.url.pathname.split("/")));
 const items = paths
   .reduce((list: string[], path) => {
-    const basepath = list.join("/").replace(/\/$/, "");
+    const basepath = (list[list.length - 1] ?? "").replace(/\/$/, "");
     const fullpath = `${basepath}/${path}`;
     list.push(fullpath);
     return list;
@@ -37,19 +49,21 @@ const t = getTransalations(lang);
 <nav>
   <ol>
     {
-      items.map((item) =>
-        item.isCurrentPage ? (
-          <li class="inline text-lg font-bold">{t(item.content)}</li>
+      items.map((item) => {
+        const content = item.content ? t(item.content) : getContent(item.href);
+
+        return item.isCurrentPage ? (
+          <li class="inline text-lg font-bold">{content}</li>
         ) : (
           <NavItem
             className="after:px-1 after:content-['/']"
             inline
             href={item.href}
           >
-            {t(item.content)}
+            {content}
           </NavItem>
-        )
-      )
+        );
+      })
     }
   </ol>
 </nav>
