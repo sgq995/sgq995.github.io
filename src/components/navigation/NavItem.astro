@@ -1,4 +1,6 @@
 ---
+import Link from "../Link.astro";
+
 export interface Props {
   href: string;
   align?: "left" | "right";
@@ -9,7 +11,6 @@ export interface Props {
 const { href, align = "left", inline = false, className } = Astro.props;
 
 const isCurrentPage = Astro.url.pathname.endsWith(href);
-const ariaCurrent = isCurrentPage ? "page" : null;
 ---
 
 <li
@@ -24,5 +25,5 @@ const ariaCurrent = isCurrentPage ? "page" : null;
     },
   ]}
 >
-  <a class="link" aria-current={ariaCurrent} href={href}><slot /></a>
+  <Link href={href}><slot /></Link>
 </li>

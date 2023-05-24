@@ -1,0 +1,24 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+export type Props = HTMLAttributes<"a"> & {
+  href: string;
+};
+
+const { href, class: className, ...props } = Astro.props;
+
+const isCurrentPage = Astro.url.pathname.endsWith(href);
+const ariaCurrent = isCurrentPage ? "page" : null;
+---
+
+<a
+  class:list={[
+    className,
+    "text-slate-600 hover:text-slate-950 active:text-slate-950",
+  ]}
+  aria-current={ariaCurrent}
+  href={href}
+  {...props}
+>
+  <slot />
+</a>

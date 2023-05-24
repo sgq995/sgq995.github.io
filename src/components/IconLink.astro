@@ -1,4 +1,6 @@
 ---
+import Link from "./Link.astro";
+
 export interface Props {
   href: string;
   alt?: string;
@@ -7,15 +9,9 @@ export interface Props {
 const { href, alt } = Astro.props;
 ---
 
-<a
-  class="link"
-  title={alt}
-  href={href}
-  target="_blank"
-  rel="noopener noreferer"
->
+<Link title={alt} href={href} target="_blank" rel="noopener noreferer">
   <slot />
-</a>
+</Link>
 
 <style lang="scss">
   a {

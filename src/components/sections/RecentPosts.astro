@@ -4,6 +4,7 @@ import Typography from "../Typography.astro";
 import { getLangFromUrl, getTransalations } from "../../i18n";
 import Section from "./Section.astro";
 import { formatDate } from "../../utilities/date.utility";
+import Link from "../Link.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = getTransalations(lang);
@@ -19,7 +20,7 @@ const entries = posts
   }));
 ---
 
-<Section title={t("title.posts")}>
+<Section title={t("section.recent")}>
   <div class="entries">
     {
       entries.map((entry) => (
@@ -28,9 +29,7 @@ const entries = posts
             {formatDate(Astro.url, entry.date)}
           </Typography>
 
-          <a class="link" href={`/${entry.href}`}>
-            {entry.title}
-          </a>
+          <Link href={`/${entry.href}`}>{entry.title}</Link>
         </>
       ))
     }
