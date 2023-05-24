@@ -47,6 +47,101 @@ const timeToRead = `${
 
     <Separator />
 
-    <Content />
+    <div class="content">
+      <Content />
+    </div>
   </div>
 </Page>
+
+<style lang="scss">
+  .content {
+    :global(h1) {
+      @apply text-4xl font-bold;
+    }
+
+    :global(h2) {
+      @apply text-3xl font-bold;
+    }
+
+    :global(h3) {
+      @apply text-xl font-bold;
+    }
+
+    :global(h4) {
+      @apply text-lg font-bold;
+    }
+
+    :global(h5) {
+      @apply font-bold;
+    }
+
+    :global(h6) {
+      @apply text-sm font-bold;
+    }
+
+    :global(h1),
+    :global(h2),
+    :global(h3),
+    :global(h4),
+    :global(h5),
+    :global(h6) {
+      @apply mb-2 mt-4;
+    }
+
+    :global(p) {
+      @apply py-2;
+    }
+
+    :global(a) {
+      @apply underline;
+
+      &:hover {
+        @apply text-slate-600;
+      }
+    }
+
+    :global(img) {
+      @apply max-w-full;
+    }
+
+    :global(blockquote) {
+      @apply my-2 rounded-md bg-gray-200 px-4;
+    }
+
+    :global(table) {
+      @apply border-collapse border border-solid border-gray-400;
+
+      :global(thead) {
+        @apply bg-gray-100;
+
+        :global(th) {
+          @apply border border-gray-400 p-2 text-left font-semibold;
+        }
+      }
+
+      :global(td) {
+        @apply border border-gray-400 p-2;
+      }
+    }
+
+    :global(pre) {
+      @apply p-4;
+    }
+
+    :global(ol) {
+      @apply list-decimal pl-5;
+    }
+
+    :global(ul) {
+      @apply list-disc pl-5;
+    }
+
+    :global(kbd) {
+      @apply box-border inline-block whitespace-nowrap rounded-sm border border-solid border-gray-400 bg-gray-100 px-1 py-0.5 pb-px text-xs font-semibold shadow-inner shadow-gray-50 drop-shadow-sm;
+    }
+
+    :global(mark) {
+      @apply bg-orange-100;
+    }
+  }
+</style>

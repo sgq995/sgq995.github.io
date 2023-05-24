@@ -20,4 +20,9 @@ export default defineConfig({
     compress(),
     solidJs(),
   ],
+  markdown: {
+    shikiConfig: {
+      theme: "dark-plus",
+    },
+  },
 });
