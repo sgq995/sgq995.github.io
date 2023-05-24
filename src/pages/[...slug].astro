@@ -3,10 +3,12 @@ import { CollectionEntry, getCollection } from "astro:content";
 import Page from "../layouts/Page.astro";
 import Typography from "../components/Typography.astro";
 import Separator from "../components/Separator.astro";
-import { TbCalendar, TbClock } from "solid-icons/tb";
 import { formatDate } from "../utilities/date.utility";
 import { getReadingTime } from "../utilities/content.utility";
 import { getLangFromUrl, getTransalations } from "../i18n";
+import { Icon } from "astro-icon";
+import Badge from "../components/Badge.astro";
+import Link from "../components/Link.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -31,25 +33,37 @@ const timeToRead = `${
 
 <Page>
   <div class="py-8">
-    <Typography variant="h1">{post.data.title}</Typography>
+    <section>
+      <header>
+        <Typography variant="h1">{post.data.title}</Typography>
+      </header>
 
-    <div class="flex items-center gap-2 pt-2">
-      <TbCalendar class="fill-none stroke-slate-600 stroke-2" />
-      <Typography>
-        {formatDate(Astro.url, post.data.pubDate)}
-      </Typography>
+      <div class="flex items-center gap-2 pt-2">
+        <Icon
+          class="h-4 w-4 stroke-slate-600 stroke-2"
+          pack="tabler"
+          name="calendar"
+        />
+        <Typography>
+          {formatDate(Astro.url, post.data.pubDate)}
+        </Typography>
 
-      <TbClock class="fill-none stroke-slate-600 stroke-2" />
-      <Typography>
-        {timeToRead}
-      </Typography>
-    </div>
+        <Icon
+          class="h-4 w-4 stroke-slate-600 stroke-2"
+          pack="tabler"
+          name="clock"
+        />
+        <Typography>
+          {timeToRead}
+        </Typography>
+      </div>
 
-    <Separator />
+      <Separator />
 
-    <div class="content">
-      <Content />
-    </div>
+      <div class="content">
+        <Content />
+      </div>
+    </section>
   </div>
 </Page>
 
