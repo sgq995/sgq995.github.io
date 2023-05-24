@@ -24,5 +24,9 @@
   "month.8": "Sep",
   "month.9": "Oct",
   "month.10": "Nov",
-  "month.11": "Dec"
+  "month.11": "Dec",
+
+  "post.time.less": "Menos de",
+  "post.time.almost": "Casi",
+  "post.time.unit": "min"
 }

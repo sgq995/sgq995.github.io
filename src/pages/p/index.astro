@@ -5,10 +5,6 @@ import { getLangFromUrl, getTransalations } from "../../i18n";
 import Separator from "../../components/Separator.astro";
 import RecentPosts from "../../components/sections/RecentPosts.astro";
 
-const posts = (await getCollection("blog")).sort(
-  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
-
 const lang = getLangFromUrl(Astro.url);
 const t = getTransalations(lang);
 ---

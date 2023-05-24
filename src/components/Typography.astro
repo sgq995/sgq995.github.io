@@ -20,7 +20,7 @@ const { variant = "body1", className } = Astro.props;
 
 {
   variant === "h1" && (
-    <h1 class={className}>
+    <h1 class:list={[className, "text-4xl font-bold"]}>
       <slot />
     </h1>
   )

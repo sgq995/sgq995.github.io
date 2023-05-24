@@ -1,21 +1,52 @@
 ---
-import { CollectionEntry, getCollection } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
+import { CollectionEntry, getCollection } from "astro:content";
+import Page from "../../layouts/Page.astro";
+import Typography from "../../components/Typography.astro";
+import Separator from "../../components/Separator.astro";
+import { TbCalendar, TbClock } from "solid-icons/tb";
+import { formatDate } from "../../utilities/date.utility";
+import { getReadingTime } from "../../utilities/content.utility";
+import { getLangFromUrl, getTransalations } from "../../i18n";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
-	}));
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
 }
-type Props = CollectionEntry<'blog'>;
+type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
 const { Content } = await post.render();
+
+const lang = getLangFromUrl(Astro.url);
+const t = getTransalations(lang);
+
+const readingTime = getReadingTime(post.body);
+const timeToRead = `${
+  readingTime < 1 ? t("post.time.less") : t("post.time.almost")
+} ${readingTime} ${t("post.time.unit")}`;
 ---
 
-<BlogPost {...post.data}>
-	<h1>{post.data.title}</h1>
-	<Content />
-</BlogPost>
+<Page>
+  <div class="py-8">
+    <Typography variant="h1">{post.data.title}</Typography>
+
+    <div class="flex items-center gap-2 py-2">
+      <TbCalendar class="fill-none stroke-slate-600 stroke-2" />
+      <Typography>
+        {formatDate(Astro.url, post.data.pubDate)}
+      </Typography>
+
+      <TbClock class="fill-none stroke-slate-600 stroke-2" />
+      <Typography>
+        {timeToRead}
+      </Typography>
+    </div>
+
+    <Separator />
+
+    <Content />
+  </div>
+</Page>

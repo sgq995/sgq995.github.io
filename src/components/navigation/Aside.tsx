@@ -78,7 +78,7 @@ const Aside: ParentComponent<AsideProps> = (props) => {
         classList={{ ["opacity-100"]: visible() }}
       ></div>
       <aside
-        class="absolute bottom-0 left-0 top-0 z-0 flex w-80 -translate-x-80 transform-gpu flex-col items-end bg-white px-3 py-8 transition-transform will-change-transform md:sticky md:translate-x-0 md:bg-transparent md:transition-none"
+        class="absolute bottom-0 left-0 top-0 z-0 flex w-80 flex-shrink-0 -translate-x-80 transform-gpu flex-col items-end bg-white px-3 py-8 transition-transform will-change-transform md:sticky md:translate-x-0 md:bg-transparent md:transition-none"
         classList={{ ["translate-x-0"]: visible() }}
         use:clickOutside={[visible, setVisible]}
       >

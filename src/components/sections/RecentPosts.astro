@@ -3,20 +3,10 @@ import { getCollection } from "astro:content";
 import Typography from "../Typography.astro";
 import { LocaleKey, getLangFromUrl, getTransalations } from "../../i18n";
 import Section from "./Section.astro";
+import { formatDate } from "../../utilities/date.utility";
 
 const lang = getLangFromUrl(Astro.url);
 const t = getTransalations(lang);
-
-function formatDate(date: Date) {
-  const year = date.getFullYear();
-  const monthString: LocaleKey = `month.${
-    date.getMonth() as 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
-  }`;
-  const month = t(monthString);
-  const day = date.getDate();
-
-  return `${year}, ${month} ${day}`;
-}
 
 const posts = await getCollection("blog");
 const entries = posts
@@ -34,7 +24,9 @@ const entries = posts
     {
       entries.map((entry) => (
         <>
-          <Typography variant="body2">{formatDate(entry.date)}</Typography>
+          <Typography variant="body2">
+            {formatDate(Astro.url, entry.date)}
+          </Typography>
 
           <a class="link" href={`/p/${entry.href}`}>
             {entry.title}
