@@ -19,14 +19,17 @@ function formatDate(date: Date) {
 }
 
 const posts = await getCollection("blog");
-const entries = posts.slice(0, 5).map((post) => ({
-  date: post.data.pubDate,
-  title: post.data.title,
-  href: post.slug,
-}));
+const entries = posts
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 5)
+  .map((post) => ({
+    date: post.data.pubDate,
+    title: post.data.title,
+    href: post.slug,
+  }));
 ---
 
-<Section>
+<Section title={t("title.posts")}>
   <div class="entries">
     {
       entries.map((entry) => (
