@@ -6,6 +6,7 @@
 
   "nav.home": "Inicio",
   "nav.posts": "Entradas",
+  "nav.tags": "Etiquetas",
 
   "header.blog": "Blog",
 
@@ -28,5 +29,9 @@
 
   "post.time.less": "Menos de",
   "post.time.almost": "Casi",
-  "post.time.unit": "min"
+  "post.time.unit": "min",
+
+  "tags.empty": "No hay etiquetas",
+  "tags.posts.count.singular": "entrada",
+  "tags.posts.count.plural": "entradas"
 }

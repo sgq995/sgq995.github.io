@@ -5,12 +5,16 @@ import NavItem from "./NavItem.astro";
 
 const PATH_TO_LOCALE: Record<string, LocaleKey> = {
   "/": "nav.home",
+  "/tags": "nav.tags",
 };
 
 const posts = await getCollection("blog");
 
 function getContent(href: string) {
-  if (href.startsWith("/")) {
+  if (href.startsWith("/tags")) {
+    const tag = href.replace(/.*\/tags\//, "");
+    return tag;
+  } else if (href.startsWith("/")) {
     const post = posts.find((post) => post.slug === href.substring(1));
     return post?.data.title ?? "";
   }

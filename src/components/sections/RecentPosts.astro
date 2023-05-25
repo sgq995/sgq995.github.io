@@ -5,6 +5,7 @@ import { getLangFromUrl, getTransalations } from "../../i18n";
 import Section from "./Section.astro";
 import { formatDate } from "../../utilities/date.utility";
 import Link from "../Link.astro";
+import PostList from "../PostList.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = getTransalations(lang);
@@ -16,31 +17,10 @@ const entries = posts
   .map((post) => ({
     date: post.data.pubDate,
     title: post.data.title,
-    href: post.slug,
+    slug: post.slug,
   }));
 ---
 
 <Section title={t("section.recent")}>
-  <div class="entries">
-    {
-      entries.map((entry) => (
-        <>
-          <Typography variant="body2">
-            {formatDate(Astro.url, entry.date)}
-          </Typography>
-
-          <Link href={`/${entry.href}`}>{entry.title}</Link>
-        </>
-      ))
-    }
-  </div>
+  <PostList entries={entries} />
 </Section>
-
-<style lang="scss">
-  .entries {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    @apply gap-x-8;
-    @apply gap-y-2;
-  }
-</style>

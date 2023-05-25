@@ -1,0 +1,17 @@
+---
+import Separator from "../../components/Separator.astro";
+import Tags from "../../components/sections/Tags.astro";
+import { getLangFromUrl, getTransalations } from "../../i18n";
+import Page from "../../layouts/Page.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = getTransalations(lang);
+---
+
+<Page title={t("title.posts")}>
+  <Separator />
+
+  <Tags />
+
+  <Separator color="secondary" />
+</Page>

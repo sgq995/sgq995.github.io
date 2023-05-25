@@ -1,0 +1,40 @@
+---
+import Typography from "./Typography.astro";
+import { formatDate } from "../utilities/date.utility";
+import Link from "./Link.astro";
+
+type Post = {
+  date: Date;
+  title: string;
+  slug: string;
+};
+
+export type Props = {
+  entries: Post[];
+};
+
+const { entries } = Astro.props;
+---
+
+<div class="entries">
+  {
+    entries.map((entry) => (
+      <>
+        <Typography variant="body2">
+          {formatDate(Astro.url, entry.date)}
+        </Typography>
+
+        <Link href={`/${entry.slug}`}>{entry.title}</Link>
+      </>
+    ))
+  }
+</div>
+
+<style lang="scss">
+  .entries {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    @apply gap-x-8;
+    @apply gap-y-2;
+  }
+</style>

@@ -6,6 +6,7 @@
 
   "nav.home": "Home",
   "nav.posts": "Posts",
+  "nav.tags": "Tags",
 
   "header.blog": "Blog",
 
@@ -28,5 +29,9 @@
 
   "post.time.less": "Less than",
   "post.time.almost": "Almost",
-  "post.time.unit": "min"
+  "post.time.unit": "min",
+
+  "tags.empty": "There are not tags yet",
+  "tags.posts.count.singular": "post",
+  "tags.posts.count.plural": "posts"
 }

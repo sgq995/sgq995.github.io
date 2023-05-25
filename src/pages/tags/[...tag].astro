@@ -1,0 +1,83 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import Page from "../../layouts/Page.astro";
+import Separator from "../../components/Separator.astro";
+import Typography from "../../components/Typography.astro";
+import PostList from "../../components/PostList.astro";
+import { Icon } from "astro-icon";
+import { getLangFromUrl, getTransalations } from "../../i18n";
+
+type Meta = {
+  tag: string;
+  posts: CollectionEntry<"blog">[];
+};
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  const tags = posts.reduce((tags: Record<string, Meta>, post) => {
+    if (post.data.tags) {
+      post.data.tags.forEach((tag) => {
+        if (!tags[tag]) {
+          tags[tag] = {
+            tag,
+            posts: [],
+          };
+        }
+        tags[tag].posts.push(post);
+      });
+    }
+    return tags;
+  }, {});
+  return Object.keys(tags).map((tag) => ({
+    params: { tag },
+    props: tags[tag],
+  }));
+}
+
+export type Props = Meta;
+
+const meta = Astro.props;
+const entries = meta.posts
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .map((post) => ({
+    date: post.data.pubDate,
+    title: post.data.title,
+    slug: post.slug,
+  }));
+
+const lang = getLangFromUrl(Astro.url);
+const t = getTransalations(lang);
+
+const postsCount = `${entries.length} ${
+  entries.length === 1
+    ? t("tags.posts.count.singular")
+    : t("tags.posts.count.plural")
+}`;
+---
+
+<Page>
+  <div class="py-8">
+    <section>
+      <header>
+        <Typography variant="h1">{meta.tag}</Typography>
+
+        <div class="flex items-center gap-2 pt-2">
+          <Icon
+            class="h-4 w-4 stroke-slate-600 stroke-2"
+            pack="tabler"
+            name="calculator"
+          />
+          <Typography>
+            {postsCount}
+          </Typography>
+        </div>
+      </header>
+
+      <Separator />
+
+      <PostList entries={entries} />
+    </section>
+
+    <Separator color="secondary" />
+  </div>
+</Page>

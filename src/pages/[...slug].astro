@@ -36,27 +36,27 @@ const timeToRead = `${
     <section>
       <header>
         <Typography variant="h1">{post.data.title}</Typography>
+
+        <div class="flex items-center gap-2 pt-2">
+          <Icon
+            class="h-4 w-4 stroke-slate-600 stroke-2"
+            pack="tabler"
+            name="calendar"
+          />
+          <Typography>
+            {formatDate(Astro.url, post.data.pubDate)}
+          </Typography>
+
+          <Icon
+            class="h-4 w-4 stroke-slate-600 stroke-2"
+            pack="tabler"
+            name="clock"
+          />
+          <Typography>
+            {timeToRead}
+          </Typography>
+        </div>
       </header>
-
-      <div class="flex items-center gap-2 pt-2">
-        <Icon
-          class="h-4 w-4 stroke-slate-600 stroke-2"
-          pack="tabler"
-          name="calendar"
-        />
-        <Typography>
-          {formatDate(Astro.url, post.data.pubDate)}
-        </Typography>
-
-        <Icon
-          class="h-4 w-4 stroke-slate-600 stroke-2"
-          pack="tabler"
-          name="clock"
-        />
-        <Typography>
-          {timeToRead}
-        </Typography>
-      </div>
 
       <Separator />
 
@@ -64,6 +64,36 @@ const timeToRead = `${
         <Content />
       </div>
     </section>
+
+    <Separator color="secondary" />
+
+    <section class="flex flex-col gap-2">
+      <Badge name="edit">
+        {formatDate(Astro.url, post.data.updatedDate ?? post.data.pubDate)}
+      </Badge>
+
+      {
+        post.data.category && (
+          <Badge name="folder">
+            <Link href={`/category/${post.data.category}`}>
+              {post.data.category}
+            </Link>
+          </Badge>
+        )
+      }
+
+      {
+        post.data.tags && (
+          <Badge name="tag">
+            {post.data.tags.map((tag) => (
+              <Link href={`/tags/${tag}`}>{tag}</Link>
+            ))}
+          </Badge>
+        )
+      }
+    </section>
+
+    <Separator />
   </div>
 </Page>
 
