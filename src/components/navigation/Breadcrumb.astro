@@ -40,7 +40,9 @@ const items = paths
     list.push({
       href: fullpath,
       content: PATH_TO_LOCALE[fullpath],
-      isCurrentPage: Astro.url.pathname.endsWith(fullpath),
+      isCurrentPage:
+        Astro.url.pathname.endsWith(fullpath) ||
+        Astro.url.pathname.endsWith(`${fullpath}/`),
     });
     return list;
   }, []);
