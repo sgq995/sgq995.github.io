@@ -41,7 +41,9 @@ const finalTitle = title === SITE_TITLE ? title : `${title} ~ ${SITE_TITLE}`;
     <div class="flex justify-center">
       <Aside client:load>
         <header>
-          <a href="/"><img src="/logo.svg" alt="" class="h-24 w-24" /></a>
+          <a href="/" aria-label={t("header.blog")}
+            ><img src="/logo.svg" alt="" class="h-24 w-24" /></a
+          >
 
           <div class="text-right">
             <Typography variant="h2">

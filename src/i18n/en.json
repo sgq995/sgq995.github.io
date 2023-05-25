@@ -10,6 +10,12 @@
 
   "header.blog": "Blog",
 
+  "social.github": "Visit my Github profile",
+  "social.twitter": "Visit my Twitter profile",
+  "social.mail": "Send me an email",
+  "social.linkedin": "Visit my Linkedin profile",
+  "social.youtube": "Visit my Youtube channel",
+
   "section.search": "Search",
   "section.tags": "Tags",
   "section.recent": "Recent",

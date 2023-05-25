@@ -7,22 +7,40 @@ import {
   TbMail,
 } from "solid-icons/tb";
 import IconLink from "../IconLink.astro";
+import { getLangFromUrl, getTransalations } from "../../i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = getTransalations(lang);
 ---
 
 <div class="flex gap-2">
-  <IconLink href="https://github.com/sgq995" icon={TbBrandGithub} />
+  <IconLink
+    href="https://github.com/sgq995"
+    icon={TbBrandGithub}
+    aria-label={t("social.github")}
+  />
 
-  <IconLink href="https://twitter.com/segoqu95" icon={TbBrandTwitter} />
+  <IconLink
+    href="https://twitter.com/segoqu95"
+    icon={TbBrandTwitter}
+    aria-label={t("social.twitter")}
+  />
 
-  <IconLink href="mailto:sgq995@gmail.com" icon={TbMail} />
+  <IconLink
+    href="mailto:sgq995@gmail.com"
+    icon={TbMail}
+    aria-label={t("social.mail")}
+  />
 
   <IconLink
     href="https://www.linkedin.com/in/sebastian-gonzalez-quintero"
     icon={TbBrandLinkedin}
+    aria-label={t("social.linkedin")}
   />
 
   <IconLink
     href="https://www.youtube.com/channel/UC34uuChc62fSICQ3_e0YTJQ"
     icon={TbBrandYoutube}
+    aria-label={t("social.youtube")}
   />
 </div>

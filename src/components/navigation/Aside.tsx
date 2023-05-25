@@ -82,18 +82,24 @@ const Aside: ParentComponent<AsideProps> = (props) => {
         classList={{ ["translate-x-0"]: visible() }}
         use:clickOutside={[visible, setVisible]}
       >
-        <div class="flex flex-col items-end sticky top-8">
-          {content()}
-        </div>
+        <div class="sticky top-8 flex flex-col items-end">{content()}</div>
       </aside>
       <Show when={!isMediumUp()}>
         <Show when={!visible()}>
-          <FloatingActionButton onClick={handleShowClick}>
+          <FloatingActionButton
+            onClick={handleShowClick}
+            role="presentation"
+            tabIndex={-1}
+          >
             <TbMenu />
           </FloatingActionButton>
         </Show>
         <Show when={visible()}>
-          <FloatingActionButton onClick={handleHideClick}>
+          <FloatingActionButton
+            onClick={handleHideClick}
+            role="presentation"
+            tabIndex={-1}
+          >
             <TbX />
           </FloatingActionButton>
         </Show>
