@@ -1,19 +1,15 @@
 ---
-import { Icon } from "astro-icon";
+import type { IconTypes } from "solid-icons";
 
 export interface Props {
-  name: string;
+  icon: IconTypes;
 }
 
-const { name } = Astro.props;
+const { icon: Icon } = Astro.props;
 ---
 
 <span class="inline-flex items-center gap-2">
-  <Icon
-    class="inline h-6 w-6 stroke-slate-600 stroke-2"
-    pack="tabler"
-    name={name}
-  />
+  <Icon class="icon icon--medium" />
 
   <slot />
 </span>

@@ -6,9 +6,9 @@ import Separator from "../components/Separator.astro";
 import { formatDate } from "../utilities/date.utility";
 import { getReadingTime } from "../utilities/content.utility";
 import { getLangFromUrl, getTransalations } from "../i18n";
-import { Icon } from "astro-icon";
 import Badge from "../components/Badge.astro";
 import Link from "../components/Link.astro";
+import { TbCalendar, TbClock, TbEdit, TbFolder, TbTag } from "solid-icons/tb";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -38,20 +38,12 @@ const timeToRead = `${
         <Typography variant="h1">{post.data.title}</Typography>
 
         <div class="flex items-center gap-2 pt-2">
-          <Icon
-            class="h-4 w-4 stroke-slate-600 stroke-2"
-            pack="tabler"
-            name="calendar"
-          />
+          <TbCalendar class="icon icon--small" />
           <Typography>
             {formatDate(Astro.url, post.data.pubDate)}
           </Typography>
 
-          <Icon
-            class="h-4 w-4 stroke-slate-600 stroke-2"
-            pack="tabler"
-            name="clock"
-          />
+          <TbClock class="icon icon--small" />
           <Typography>
             {timeToRead}
           </Typography>
@@ -68,13 +60,13 @@ const timeToRead = `${
     <Separator color="secondary" />
 
     <section class="flex flex-col gap-2">
-      <Badge name="edit">
+      <Badge icon={TbEdit}>
         {formatDate(Astro.url, post.data.updatedDate ?? post.data.pubDate)}
       </Badge>
 
       {
         post.data.category && (
-          <Badge name="folder">
+          <Badge icon={TbFolder}>
             <Link href={`/category/${post.data.category}`}>
               {post.data.category}
             </Link>
@@ -84,7 +76,7 @@ const timeToRead = `${
 
       {
         post.data.tags && (
-          <Badge name="tag">
+          <Badge icon={TbTag}>
             {post.data.tags.map((tag) => (
               <Link href={`/tags/${tag}`}>{tag}</Link>
             ))}

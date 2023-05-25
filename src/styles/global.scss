@@ -1,0 +1,11 @@
+.icon {
+  @apply inline fill-none stroke-2;
+
+  &--small {
+    @apply h-4 w-4;
+  }
+
+  &--medium {
+    @apply h-6 w-6;
+  }
+}

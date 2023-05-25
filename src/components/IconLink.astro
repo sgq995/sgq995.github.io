@@ -1,16 +1,17 @@
 ---
-import { Icon } from "astro-icon";
 import Link from "./Link.astro";
+import type { IconTypes } from "solid-icons";
 
 export interface Props {
   href: string;
-  name: string;
+  icon: IconTypes;
   alt?: string;
 }
 
-const { href, name, alt } = Astro.props;
+const { href, icon: Icon, alt } = Astro.props;
 ---
 
 <Link title={alt} href={href} target="_blank" rel="noopener noreferer">
-  <Icon class="inline h-6 w-6" pack="tabler" name={name} />
+  <!-- <Icon class="inline h-6 w-6" pack="tabler" name={name} /> -->
+  <Icon class="inline h-6 w-6 fill-none stroke-2" />
 </Link>

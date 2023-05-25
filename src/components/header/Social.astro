@@ -1,21 +1,28 @@
 ---
+import {
+  TbBrandGithub,
+  TbBrandLinkedin,
+  TbBrandTwitter,
+  TbBrandYoutube,
+  TbMail,
+} from "solid-icons/tb";
 import IconLink from "../IconLink.astro";
 ---
 
 <div class="flex gap-2">
-  <IconLink href="https://github.com/sgq995" name="brand-github" />
+  <IconLink href="https://github.com/sgq995" icon={TbBrandGithub} />
 
-  <IconLink href="https://twitter.com/segoqu95" name="brand-twitter" />
+  <IconLink href="https://twitter.com/segoqu95" icon={TbBrandTwitter} />
 
-  <IconLink href="mailto:sgq995@gmail.com" name="mail" />
+  <IconLink href="mailto:sgq995@gmail.com" icon={TbMail} />
 
   <IconLink
     href="https://www.linkedin.com/in/sebastian-gonzalez-quintero"
-    name="brand-linkedin"
+    icon={TbBrandLinkedin}
   />
 
   <IconLink
     href="https://www.youtube.com/channel/UC34uuChc62fSICQ3_e0YTJQ"
-    name="brand-youtube"
+    icon={TbBrandYoutube}
   />
 </div>

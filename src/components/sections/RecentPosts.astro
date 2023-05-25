@@ -1,10 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import Typography from "../Typography.astro";
 import { getLangFromUrl, getTransalations } from "../../i18n";
 import Section from "./Section.astro";
-import { formatDate } from "../../utilities/date.utility";
-import Link from "../Link.astro";
 import PostList from "../PostList.astro";
 
 const lang = getLangFromUrl(Astro.url);

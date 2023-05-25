@@ -4,8 +4,8 @@ import Page from "../../layouts/Page.astro";
 import Separator from "../../components/Separator.astro";
 import Typography from "../../components/Typography.astro";
 import PostList from "../../components/PostList.astro";
-import { Icon } from "astro-icon";
 import { getLangFromUrl, getTransalations } from "../../i18n";
+import { TbCalculator } from "solid-icons/tb";
 
 type Meta = {
   tag: string;
@@ -62,11 +62,7 @@ const postsCount = `${entries.length} ${
         <Typography variant="h1">{meta.tag}</Typography>
 
         <div class="flex items-center gap-2 pt-2">
-          <Icon
-            class="h-4 w-4 stroke-slate-600 stroke-2"
-            pack="tabler"
-            name="calculator"
-          />
+          <TbCalculator class="icon icon--small" />
           <Typography>
             {postsCount}
           </Typography>
