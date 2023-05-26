@@ -12,13 +12,13 @@ const ariaCurrent = isCurrentPage ? "page" : null;
 ---
 
 <a
+  {...props}
   class:list={[
     className,
     "text-slate-600 hover:text-slate-950 active:text-slate-950",
   ]}
   aria-current={ariaCurrent}
   href={href}
-  {...props}
 >
   <slot />
 </a>
