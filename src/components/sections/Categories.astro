@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+import Typography from "../Typography.astro";
+import { getLangFromUrl, getTransalations } from "../../i18n";
+import Section from "./Section.astro";
+import Link from "../Link.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = getTransalations(lang);
+
+const posts = await getCollection("blog");
+const categories = Array.from(
+  posts.reduce((categories, post) => {
+    if (post.data.category) {
+      categories.add(post.data.category);
+    }
+    return categories;
+  }, new Set())
+);
+---
+
+<Section title={t("section.categories")}>
+  <div>
+    {
+      categories.length === 0 && (
+        <Typography variant="body2">{t("categories.empty")}</Typography>
+      )
+    }
+
+    {categories.map((tag) => <Link href={`/categories/${tag}`}>{tag}</Link>)}
+  </div>
+</Section>

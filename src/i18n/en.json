@@ -3,10 +3,13 @@
   "site.description": "Personal blog",
 
   "title.posts": "Posts",
+  "title.tags": "Tags",
+  "title.categories": "Categories",
 
   "nav.home": "Home",
   "nav.posts": "Posts",
   "nav.tags": "Tags",
+  "nav.categories": "Categories",
 
   "header.blog": "Blog",
 
@@ -18,6 +21,7 @@
 
   "section.search": "Search",
   "section.tags": "Tags",
+  "section.categories": "Categories",
   "section.recent": "Recent",
 
   "month.0": "Jan",
@@ -39,5 +43,9 @@
 
   "tags.empty": "There are not tags yet",
   "tags.posts.count.singular": "post",
-  "tags.posts.count.plural": "posts"
+  "tags.posts.count.plural": "posts",
+
+  "categories.empty": "There are not categories yet",
+  "categories.posts.count.singular": "post",
+  "categories.posts.count.plural": "posts"
 }

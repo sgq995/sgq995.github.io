@@ -1,5 +1,6 @@
 ---
 import Separator from "../components/Separator.astro";
+import Categories from "../components/sections/Categories.astro";
 import RecentPosts from "../components/sections/RecentPosts.astro";
 import Tags from "../components/sections/Tags.astro";
 import Page from "../layouts/Page.astro";
@@ -12,7 +13,11 @@ import Page from "../layouts/Page.astro";
 
   <Separator color="secondary" />
 
-  <Tags />
+  <Categories />
 
   <Separator />
+
+  <Tags />
+
+  <Separator color="secondary" />
 </Page>

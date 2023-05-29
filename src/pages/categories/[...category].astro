@@ -8,29 +8,27 @@ import { getLangFromUrl, getTransalations } from "../../i18n";
 import { TbCalculator } from "solid-icons/tb";
 
 type Meta = {
-  tag: string;
+  category: string;
   posts: CollectionEntry<"blog">[];
 };
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
-  const tags = posts.reduce((tags: Record<string, Meta>, post) => {
-    if (post.data.tags) {
-      post.data.tags.forEach((tag) => {
-        if (!tags[tag]) {
-          tags[tag] = {
-            tag,
-            posts: [],
-          };
-        }
-        tags[tag].posts.push(post);
-      });
+  const categories = posts.reduce((categories: Record<string, Meta>, post) => {
+    if (post.data.category) {
+      if (!categories[post.data.category]) {
+        categories[post.data.category] = {
+          category: post.data.category,
+          posts: [],
+        };
+      }
+      categories[post.data.category].posts.push(post);
     }
-    return tags;
+    return categories;
   }, {});
-  return Object.keys(tags).map((tag) => ({
-    params: { tag },
-    props: tags[tag],
+  return Object.keys(categories).map((category) => ({
+    params: { category },
+    props: categories[category],
   }));
 }
 
@@ -50,16 +48,16 @@ const t = getTransalations(lang);
 
 const postsCount = `${entries.length} ${
   entries.length === 1
-    ? t("tags.posts.count.singular")
-    : t("tags.posts.count.plural")
+    ? t("categories.posts.count.singular")
+    : t("categories.posts.count.plural")
 }`;
 ---
 
-<Page title={meta.tag}>
+<Page title={meta.category}>
   <div class="py-8">
     <section>
       <header>
-        <Typography variant="h1">{meta.tag}</Typography>
+        <Typography variant="h1">{meta.category}</Typography>
 
         <div class="flex items-center gap-2 pt-2">
           <TbCalculator class="icon icon--small" />

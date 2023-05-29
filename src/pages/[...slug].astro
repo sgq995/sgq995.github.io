@@ -31,7 +31,7 @@ const timeToRead = `${
 } ${readingTime} ${t("post.time.unit")}`;
 ---
 
-<Page>
+<Page title={post.data.title}>
   <div class="py-8">
     <section>
       <header>
@@ -67,7 +67,7 @@ const timeToRead = `${
       {
         post.data.category && (
           <Badge icon={TbFolder}>
-            <Link href={`/category/${post.data.category}`}>
+            <Link href={`/categories/${post.data.category}`}>
               {post.data.category}
             </Link>
           </Badge>
