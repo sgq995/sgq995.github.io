@@ -10,7 +10,8 @@ export interface Props {
 
 const { href, align = "left", inline = false, className } = Astro.props;
 
-const isCurrentPage = Astro.url.pathname === href;
+const isCurrentPage =
+  Astro.url.pathname === href || Astro.url.pathname === `${href}/`;
 ---
 
 <li
