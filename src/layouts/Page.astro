@@ -57,7 +57,9 @@ const finalTitle = title === SITE_TITLE ? title : `${title} ~ ${SITE_TITLE}`;
         <nav>
           <ul>
             <NavItem href="/" align="right">{t("nav.home")}</NavItem>
-            <NavItem href="/categories" align="right">{t("nav.categories")}</NavItem>
+            <NavItem href="/categories" align="right">
+              {t("nav.categories")}
+            </NavItem>
           </ul>
         </nav>
 
@@ -67,11 +69,11 @@ const finalTitle = title === SITE_TITLE ? title : `${title} ~ ${SITE_TITLE}`;
       </Aside>
 
       <div class="max-w-full flex-grow px-3 py-8">
-        <section class="">
+        <section>
           <Breadcrumb />
         </section>
 
-        <main>
+        <main class="h-full">
           <slot />
         </main>
       </div>
