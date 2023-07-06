@@ -28,7 +28,9 @@ const isCurrentPage =
     {
       "inline-block": inline,
       "text-left": !centerOnMobile && align === "left",
+      "md:text-left": centerOnMobile && align === "left",
       "text-right": !centerOnMobile && align === "right",
+      "md:text-right": centerOnMobile && align === "right",
       "text-center": centerOnMobile,
       "font-bold": isCurrentPage,
     },
