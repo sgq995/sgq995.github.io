@@ -27,8 +27,8 @@ const t = getTransalations(lang);
 
 const readingTime = getReadingTime(post.body);
 const timeToRead = `${
-  readingTime < 1 ? t("post.time.less") : t("post.time.almost")
-} ${readingTime} ${t("post.time.unit")}`;
+  readingTime > 1 ? t("post.time.almost") : t("post.time.less")
+} ${readingTime > 1 ? readingTime : 1} ${t("post.time.unit")}`;
 ---
 
 <Page title={post.data.title}>

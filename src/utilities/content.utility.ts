@@ -1,6 +1,6 @@
 import { getCollection } from "astro:content";
 
-const WORD_PER_MINUTE = 150;
+const WORD_PER_MINUTE = 200;
 
 export function getReadingTime(content: string) {
   const words = content.split(/\s+/).length;
