@@ -16,7 +16,11 @@ export default defineConfig({
     mdx(),
     sitemap(),
     tailwind(),
-    partytown(),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
     compress(),
     solidJs(),
   ],
