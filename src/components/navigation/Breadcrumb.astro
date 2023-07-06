@@ -12,13 +12,15 @@ const PATH_TO_LOCALE: Record<string, LocaleKey> = {
 const posts = await getBlogPosts();
 
 function getContent(href: string) {
+  const decodedHref = decodeURIComponent(href);
+
   if (href.startsWith("/categories")) {
-    const category = href.replace(/.*\/categories\//, "");
+    const category = decodedHref.replace(/.*\/categories\//, "");
     return category;
   }
 
   if (href.startsWith("/tags")) {
-    const tag = href.replace(/.*\/tags\//, "");
+    const tag = decodedHref.replace(/.*\/tags\//, "");
     return tag;
   }
 
