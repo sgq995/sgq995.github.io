@@ -1,9 +1,10 @@
 ---
 export interface Props {
   color?: "primary" | "secondary";
+  fullOnMobile?: boolean;
 }
 
-const { color = "primary" } = Astro.props;
+const { color = "primary", fullOnMobile = false } = Astro.props;
 ---
 
 <hr
@@ -12,6 +13,7 @@ const { color = "primary" } = Astro.props;
     {
       "border-t-sky-500": color === "primary",
       "border-t-slate-300": color === "secondary",
+      "w-full md:w-24": fullOnMobile,
     },
   ]}
 />

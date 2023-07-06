@@ -74,15 +74,20 @@ const Aside: ParentComponent<AsideProps> = (props) => {
   return (
     <>
       <div
-        class="absolute inset-0 -z-10 bg-gray-200 opacity-0 transition-opacity md:hidden"
-        classList={{ ["opacity-100"]: visible() }}
+        class="absolute inset-0 z-10 bg-gray-200 opacity-0 transition-opacity"
+        classList={{
+          hidden: !visible(),
+          "opacity-50": visible(),
+        }}
       ></div>
       <aside
-        class="absolute bottom-0 left-0 top-0 z-0 w-80 flex-shrink-0 -translate-x-80 transform-gpu bg-white px-3 py-8 transition-transform will-change-transform md:static md:translate-x-0 md:bg-transparent md:transition-none"
+        class="absolute bottom-0 left-0 top-0 z-20 w-60 flex-shrink-0 -translate-x-80 transform-gpu bg-white px-3 py-8 transition-transform will-change-transform md:static md:translate-x-0 md:bg-transparent md:transition-none"
         classList={{ ["translate-x-0"]: visible() }}
         use:clickOutside={[visible, setVisible]}
       >
-        <div class="sticky top-8 flex flex-col items-end">{content()}</div>
+        <div class="sticky top-8 flex flex-col items-center md:items-end">
+          {content()}
+        </div>
       </aside>
       <Show when={!isMediumUp()}>
         <Show when={!visible()}>

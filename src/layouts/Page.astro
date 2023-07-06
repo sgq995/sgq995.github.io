@@ -45,25 +45,27 @@ const finalTitle = title === SITE_TITLE ? title : `${title} ~ ${SITE_TITLE}`;
             <img src="/logo.svg" alt="" class="h-24 w-24" />
           </a>
 
-          <div class="text-right">
+          <div class="text-center md:text-right">
             <Typography variant="h2">
               <a href="/">{t("header.blog")}</a>
             </Typography>
           </div>
         </header>
 
-        <Separator />
+        <Separator fullOnMobile />
 
         <nav>
           <ul>
-            <NavItem href="/" align="right">{t("nav.home")}</NavItem>
-            <NavItem href="/categories" align="right">
+            <NavItem href="/" align="right" centerOnMobile>
+              {t("nav.home")}
+            </NavItem>
+            <NavItem href="/categories" align="right" centerOnMobile>
               {t("nav.categories")}
             </NavItem>
           </ul>
         </nav>
 
-        <Separator color="secondary" />
+        <Separator color="secondary" fullOnMobile />
 
         <Social />
       </Aside>
