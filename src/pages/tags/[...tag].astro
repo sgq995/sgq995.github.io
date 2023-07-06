@@ -1,11 +1,12 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import Page from "../../layouts/Page.astro";
 import Separator from "../../components/Separator.astro";
 import Typography from "../../components/Typography.astro";
 import PostList from "../../components/PostList.astro";
 import { getLangFromUrl, getTransalations } from "../../i18n";
 import { TbCalculator } from "solid-icons/tb";
+import { getBlogPosts } from "../../utilities/content.utility";
 
 type Meta = {
   tag: string;
@@ -13,7 +14,7 @@ type Meta = {
 };
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  const posts = await getBlogPosts();
   const tags = posts.reduce((tags: Record<string, Meta>, post) => {
     if (post.data.tags) {
       post.data.tags.forEach((tag) => {

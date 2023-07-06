@@ -1,7 +1,7 @@
 import en from "./en.json";
 import es from "./es.json";
 
-export const defaultLang = "es";
+export const defaultLang = "en";
 
 export const locales = {
   en,

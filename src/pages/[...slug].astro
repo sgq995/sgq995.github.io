@@ -1,17 +1,17 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import Page from "../layouts/Page.astro";
 import Typography from "../components/Typography.astro";
 import Separator from "../components/Separator.astro";
 import { formatDate } from "../utilities/date.utility";
-import { getReadingTime } from "../utilities/content.utility";
+import { getBlogPosts, getReadingTime } from "../utilities/content.utility";
 import { getLangFromUrl, getTransalations } from "../i18n";
 import Badge from "../components/Badge.astro";
 import Link from "../components/Link.astro";
 import { TbCalendar, TbClock, TbEdit, TbFolder, TbTag } from "solid-icons/tb";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  const posts = await getBlogPosts();
   return posts.map((post) => ({
     params: { slug: post.slug },
     props: post,

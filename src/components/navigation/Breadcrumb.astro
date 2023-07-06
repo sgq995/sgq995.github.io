@@ -1,7 +1,7 @@
 ---
-import { getCollection } from "astro:content";
 import { LocaleKey, getLangFromUrl, getTransalations } from "../../i18n";
 import NavItem from "./NavItem.astro";
+import { getBlogPosts } from "../../utilities/content.utility";
 
 const PATH_TO_LOCALE: Record<string, LocaleKey> = {
   "/": "nav.home",
@@ -9,7 +9,7 @@ const PATH_TO_LOCALE: Record<string, LocaleKey> = {
   "/categories": "nav.categories",
 };
 
-const posts = await getCollection("blog");
+const posts = await getBlogPosts();
 
 function getContent(href: string) {
   if (href.startsWith("/categories")) {

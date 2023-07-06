@@ -1,13 +1,13 @@
 ---
-import { getCollection } from "astro:content";
 import { getLangFromUrl, getTransalations } from "../../i18n";
 import Section from "./Section.astro";
 import PostList from "../PostList.astro";
+import { getBlogPosts } from "../../utilities/content.utility";
 
 const lang = getLangFromUrl(Astro.url);
 const t = getTransalations(lang);
 
-const posts = await getCollection("blog");
+const posts = await getBlogPosts();
 const entries = posts
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 5)

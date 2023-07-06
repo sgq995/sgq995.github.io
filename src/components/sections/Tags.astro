@@ -1,14 +1,14 @@
 ---
-import { getCollection } from "astro:content";
 import Typography from "../Typography.astro";
 import { getLangFromUrl, getTransalations } from "../../i18n";
 import Section from "./Section.astro";
 import Link from "../Link.astro";
+import { getBlogPosts } from "../../utilities/content.utility";
 
 const lang = getLangFromUrl(Astro.url);
 const t = getTransalations(lang);
 
-const posts = await getCollection("blog");
+const posts = await getBlogPosts();
 const tags = Array.from(
   posts.reduce((tags, post) => {
     if (post.data.tags) {
