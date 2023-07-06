@@ -1,7 +1,17 @@
 ---
-import '../../styles/global.scss';
+import "../../styles/global.scss";
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+declare global {
+  type DataLayer = unknown[];
+
+  interface Window {
+    dataLayer: DataLayer;
+  }
+
+  const dataLayer: DataLayer;
+}
 ---
 
 <!-- Global Metadata -->
@@ -15,4 +25,25 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 <slot />
 
-<script type="text/partytown" defer data-domain="segoqu.com" src="https://plausible.io/js/script.js"></script>
+<script
+  type="text/partytown"
+  defer
+  data-domain="segoqu.com"
+  src="https://plausible.io/js/script.js"
+></script>
+
+<!-- Google tag (gtag.js) -->
+<script
+  type="text/partytown"
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-3Q9R6QXYQS"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-3Q9R6QXYQS");
+</script>
