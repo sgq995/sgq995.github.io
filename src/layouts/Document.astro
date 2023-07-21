@@ -9,7 +9,35 @@ import Head from "../components/head/Head.astro";
       <slot name="head" />
     </Head>
   </head>
-  <body class="transition-colors dark:bg-slate-900 dark:text-white">
+  <body class="dark:bg-slate-900 dark:text-white">
+    <script lang="typescript">
+      function setTheme(theme: "dark" | "light") {
+        if (theme === "light") {
+          document.documentElement.classList.add("light");
+          document.documentElement.classList.remove("dark");
+
+          localStorage.setItem("theme", "light");
+        } else if (theme === "dark") {
+          document.documentElement.classList.remove("light");
+          document.documentElement.classList.add("dark");
+
+          localStorage.setItem("theme", "dark");
+        }
+      }
+
+      const storedTheme = localStorage.getItem("theme");
+      if (
+        storedTheme === "dark" ||
+        (storedTheme === null &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        setUserTheme("dark");
+      } else {
+        setUserTheme("light");
+      }
+      document.body.classList.add("transition-colors");
+    </script>
+
     <slot />
   </body>
 </html>

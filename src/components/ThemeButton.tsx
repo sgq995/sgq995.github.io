@@ -46,11 +46,11 @@ export const ThemeButton: Component = () => {
       class="rounded-full border border-gray-300 p-2 shadow-lg dark:border-slate-800 dark:bg-slate-700 dark:shadow-slate-800"
       onClick={handleButtonClick}
     >
-      <Show when={theme() === "dark"}>
-        <TbSun class="h-6 w-6 fill-none stroke-white stroke-2" />
-      </Show>
       <Show when={theme() === "light"}>
         <TbMoon class="h-6 w-6 fill-none stroke-black stroke-2" />
+      </Show>
+      <Show when={theme() === "dark"}>
+        <TbSun class="h-6 w-6 fill-none stroke-white stroke-2" />
       </Show>
     </button>
   );
