@@ -1,4 +1,11 @@
-import { createSignal, type Component, Show, onMount } from "solid-js";
+import {
+  createSignal,
+  type Component,
+  Show,
+  onMount,
+  Match,
+  Switch,
+} from "solid-js";
 import { TbMoon, TbSun } from "solid-icons/tb";
 
 export const ThemeButton: Component = () => {
@@ -46,13 +53,14 @@ export const ThemeButton: Component = () => {
       class="rounded-full border border-gray-300 p-2 shadow-lg dark:border-slate-800 dark:bg-slate-700 dark:shadow-slate-800"
       onClick={handleButtonClick}
     >
-      <Show when={theme() === "light"}>
-        <TbMoon class="h-6 w-6 fill-none stroke-black stroke-2" />
-      </Show>
-      <span></span>
-      <Show when={theme() === "dark"}>
-        <TbSun class="h-6 w-6 fill-none stroke-white stroke-2" />
-      </Show>
+      <Switch>
+        <Match when={theme() === "light"}>
+          <TbMoon class="h-6 w-6 fill-none stroke-black stroke-2" />
+        </Match>
+        <Match when={theme() === "dark"}>
+          <TbSun class="h-6 w-6 fill-none stroke-white stroke-2" />
+        </Match>
+      </Switch>
     </button>
   );
 };
