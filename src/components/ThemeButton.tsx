@@ -49,6 +49,7 @@ export const ThemeButton: Component = () => {
       <Show when={theme() === "light"}>
         <TbMoon class="h-6 w-6 fill-none stroke-black stroke-2" />
       </Show>
+      <span></span>
       <Show when={theme() === "dark"}>
         <TbSun class="h-6 w-6 fill-none stroke-white stroke-2" />
       </Show>

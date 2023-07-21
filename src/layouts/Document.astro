@@ -10,8 +10,8 @@ import Head from "../components/head/Head.astro";
     </Head>
   </head>
   <body class="dark:bg-slate-900 dark:text-white">
-    <script lang="typescript">
-      function setTheme(theme: "dark" | "light") {
+    <script>
+      function setTheme(theme) {
         if (theme === "light") {
           document.documentElement.classList.add("light");
           document.documentElement.classList.remove("dark");
