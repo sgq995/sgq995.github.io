@@ -68,7 +68,7 @@ const { variant = "body1", className } = Astro.props;
 
 {
   variant === "body2" && (
-    <span class:list={[className, "text-slate-900"]}>
+    <span class:list={[className, "text-slate-900 dark:text-slate-50"]}>
       <slot />
     </span>
   )

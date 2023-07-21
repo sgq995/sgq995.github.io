@@ -8,6 +8,7 @@ import NavItem from "../components/navigation/NavItem.astro";
 import Social from "../components/header/Social.astro";
 import Breadcrumb from "../components/navigation/Breadcrumb.astro";
 import Aside from "../components/navigation/Aside";
+import { ThemeButton } from "../components/ThemeButton";
 
 export interface Props {
   title?: string;
@@ -38,6 +39,10 @@ const finalTitle = title === SITE_TITLE ? title : `${title} ~ ${SITE_TITLE}`;
   <div
     class="min-h-small-screen container relative mx-auto flex min-h-screen max-w-5xl flex-col justify-between"
   >
+    <div class="absolute right-4 top-4">
+      <ThemeButton client:load />
+    </div>
+
     <div class="flex justify-center">
       <Aside client:load>
         <header>

@@ -132,7 +132,7 @@ const timeToRead = `${
       @apply underline;
 
       &:hover {
-        @apply text-slate-600;
+        @apply text-slate-600 dark:text-slate-600;
       }
     }
 
@@ -141,22 +141,22 @@ const timeToRead = `${
     }
 
     :global(blockquote) {
-      @apply my-2 rounded-md bg-gray-200 px-4;
+      @apply my-2 rounded-md bg-gray-200 px-4 dark:bg-gray-800;
     }
 
     :global(table) {
-      @apply border-collapse border border-solid border-gray-400;
+      @apply border-collapse border border-solid border-gray-400 dark:border-gray-600;
 
       :global(thead) {
         @apply bg-gray-100;
 
         :global(th) {
-          @apply border border-gray-400 p-2 text-left font-semibold;
+          @apply border border-gray-400 p-2 text-left font-semibold dark:border-gray-600;
         }
       }
 
       :global(td) {
-        @apply border border-gray-400 p-2;
+        @apply border border-gray-400 p-2 dark:border-gray-600;
       }
     }
 
@@ -173,11 +173,11 @@ const timeToRead = `${
     }
 
     :global(kbd) {
-      @apply box-border inline-block whitespace-nowrap rounded-sm border border-solid border-gray-400 bg-gray-100 px-1 py-0.5 pb-px text-xs font-semibold shadow-inner shadow-gray-50 drop-shadow-sm;
+      @apply box-border inline-block whitespace-nowrap rounded-sm border border-solid border-gray-400 bg-gray-100 px-1 py-0.5 pb-px text-xs font-semibold shadow-inner shadow-gray-50 drop-shadow-sm dark:border-gray-600 dark:bg-gray-900 dark:shadow-gray-950;
     }
 
     :global(mark) {
-      @apply bg-orange-100;
+      @apply bg-orange-100 dark:bg-sky-900;
     }
   }
 </style>
