@@ -74,14 +74,14 @@ const Aside: ParentComponent<AsideProps> = (props) => {
   return (
     <>
       <div
-        class="absolute inset-0 z-10 bg-gray-200 opacity-0 transition-opacity"
+        class="absolute inset-0 z-10 bg-gray-200 opacity-0 transition-opacity dark:bg-slate-800"
         classList={{
           hidden: !visible(),
           "opacity-50": visible(),
         }}
       ></div>
       <aside
-        class="absolute bottom-0 left-0 top-0 z-20 w-60 flex-shrink-0 -translate-x-80 transform-gpu bg-white px-3 py-8 transition-transform will-change-transform md:static md:translate-x-0 md:bg-transparent md:transition-none"
+        class="absolute bottom-0 left-0 top-0 z-20 w-60 flex-shrink-0 -translate-x-80 transform-gpu bg-white px-3 py-8 transition-transform will-change-transform dark:bg-slate-900 md:static md:translate-x-0 md:bg-transparent md:transition-none"
         classList={{ ["translate-x-0"]: visible() }}
         use:clickOutside={[visible, setVisible]}
       >
