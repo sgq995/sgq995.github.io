@@ -5,13 +5,19 @@ import {
   onMount,
   Match,
   Switch,
+  mergeProps,
+  createEffect,
 } from "solid-js";
 import { TbMoon, TbSun } from "solid-icons/tb";
 
-export const ThemeButton: Component = () => {
-  const [theme, setTheme] = createSignal<"dark" | "light">("light");
+export type Theme = "dark" | "light";
 
-  const setUserTheme = (theme: "dark" | "light") => {
+export const ThemeButton: Component = () => {
+  const initialTheme: Theme =
+    (localStorage.getItem("theme") as Theme) ?? "light";
+  const [theme, setTheme] = createSignal<Theme>(initialTheme);
+
+  const setUserTheme = (theme: Theme) => {
     if (theme === "light") {
       document.documentElement.classList.add("light");
       document.documentElement.classList.remove("dark");

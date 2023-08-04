@@ -8,29 +8,27 @@ import Head from "../components/head/Head.astro";
     <Head>
       <slot name="head" />
     </Head>
+
+    <script is:inline>
+      const storedTheme = localStorage.getItem("theme");
+      if (
+        storedTheme === "dark" ||
+        (storedTheme === null &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+      } else {
+        document.documentElement.classList.add("light");
+        localStorage.setItem("theme", "light");
+      }
+
+      setTimeout(function () {
+        document.body.classList.add("transition-colors");
+      }, 100);
+    </script>
   </head>
   <body class="dark:bg-slate-900 dark:text-white">
-    <script>
-      function onLoad() {
-        const storedTheme = localStorage.getItem("theme");
-        if (
-          storedTheme === "dark" ||
-          (storedTheme === null &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches)
-        ) {
-          document.documentElement.classList.add("dark");
-          localStorage.setItem("theme", "dark");
-        } else {
-          document.documentElement.classList.add("light");
-          localStorage.setItem("theme", "light");
-        }
-        document.body.classList.add("transition-colors");
-
-        document.removeEventListener("DOMContentLoaded", onLoad);
-      }
-      document.addEventListener("DOMContentLoaded", onLoad);
-    </script>
-
     <slot />
   </body>
 </html>

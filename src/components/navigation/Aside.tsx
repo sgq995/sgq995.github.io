@@ -40,7 +40,7 @@ export type AsideProps = {};
 
 const Aside: ParentComponent<AsideProps> = (props) => {
   const content = children(() => props.children);
-  const [isMediumUp, setIsMediumUp] = createSignal(false);
+  const [isMediumUp, setIsMediumUp] = createSignal(true);
   const [visible, setVisible] = createSignal(false);
 
   const handleMediaQueryChange = (event: MediaQueryListEvent) => {
