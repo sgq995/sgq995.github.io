@@ -2,14 +2,16 @@
 import { getLangFromUrl, getTransalations } from "../../i18n";
 import Section from "./Section.astro";
 import PostList from "../PostList.astro";
-import { getBlogPosts } from "../../utilities/content.utility";
+import {
+  getBlogPosts,
+  sortPostsByDateDesc,
+} from "../../utilities/content.utility";
 
 const lang = getLangFromUrl(Astro.url);
 const t = getTransalations(lang);
 
 const posts = await getBlogPosts();
-const entries = posts
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+const entries = sortPostsByDateDesc(posts)
   .slice(0, 5)
   .map((post) => ({
     date: post.data.pubDate,

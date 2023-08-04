@@ -1,8 +1,8 @@
 ---
 title: "Let's build Motion CSS"
 description: "A no-code tool for highly performant CSS animations"
-pubDate: "Jul 05 2022"
-image: "/lets-build-motion-css/banner.svg"
+pubDate: "Jul 05 2023"
+image: "/lets-build-motion-css/banner.webp"
 category: "Side Project"
 tags: ["css", "side project", "build in public"]
 ---

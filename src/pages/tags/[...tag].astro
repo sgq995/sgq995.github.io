@@ -6,7 +6,10 @@ import Typography from "../../components/Typography.astro";
 import PostList from "../../components/PostList.astro";
 import { getLangFromUrl, getTransalations } from "../../i18n";
 import { TbCalculator } from "solid-icons/tb";
-import { getBlogPosts } from "../../utilities/content.utility";
+import {
+  getPostsGroupByTags,
+  sortPostsByDateDesc,
+} from "../../utilities/content.utility";
 
 type Meta = {
   tag: string;
@@ -14,37 +17,24 @@ type Meta = {
 };
 
 export async function getStaticPaths() {
-  const posts = await getBlogPosts();
-  const tags = posts.reduce((tags: Record<string, Meta>, post) => {
-    if (post.data.tags) {
-      post.data.tags.forEach((tag) => {
-        if (!tags[tag]) {
-          tags[tag] = {
-            tag,
-            posts: [],
-          };
-        }
-        tags[tag].posts.push(post);
-      });
-    }
-    return tags;
-  }, {});
+  const tags = await getPostsGroupByTags();
   return Object.keys(tags).map((tag) => ({
     params: { tag },
-    props: tags[tag],
+    props: {
+      tag,
+      posts: tags[tag],
+    },
   }));
 }
 
 export type Props = Meta;
 
 const meta = Astro.props;
-const entries = meta.posts
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .map((post) => ({
-    date: post.data.pubDate,
-    title: post.data.title,
-    slug: post.slug,
-  }));
+const entries = sortPostsByDateDesc(meta.posts).map((post) => ({
+  date: post.data.pubDate,
+  title: post.data.title,
+  slug: post.slug,
+}));
 
 const lang = getLangFromUrl(Astro.url);
 const t = getTransalations(lang);

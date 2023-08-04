@@ -3,22 +3,13 @@ import Typography from "../Typography.astro";
 import { getLangFromUrl, getTransalations } from "../../i18n";
 import Section from "./Section.astro";
 import Link from "../Link.astro";
-import { getBlogPosts } from "../../utilities/content.utility";
+import { getTags } from "../../utilities/content.utility";
+import InlineItem from "../InlineItem.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = getTransalations(lang);
 
-const posts = await getBlogPosts();
-const tags = Array.from(
-  posts.reduce((tags, post) => {
-    if (post.data.tags) {
-      post.data.tags.forEach((tag) => {
-        tags.add(tag);
-      });
-    }
-    return tags;
-  }, new Set())
-);
+const tags = await getTags();
 ---
 
 <Section title={t("section.tags")}>
@@ -29,6 +20,12 @@ const tags = Array.from(
       )
     }
 
-    {tags.map((tag) => <Link href={`/tags/${tag}`}>{tag}</Link>)}
+    {
+      tags.map((tag) => (
+        <InlineItem>
+          <Link href={`/tags/${encodeURIComponent(tag)}`}>{tag}</Link>
+        </InlineItem>
+      ))
+    }
   </div>
 </Section>

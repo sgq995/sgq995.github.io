@@ -3,20 +3,23 @@ import Typography from "../Typography.astro";
 import { getLangFromUrl, getTransalations } from "../../i18n";
 import Section from "./Section.astro";
 import Link from "../Link.astro";
-import { getBlogPosts } from "../../utilities/content.utility";
+import { getCategories } from "../../utilities/content.utility";
+import List from "../List.astro";
+import InlineItem from "../InlineItem.astro";
+import ListItem from "../ListItem.astro";
+
+export type Props = {
+  inline?: boolean;
+};
+
+const { inline = true } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 const t = getTransalations(lang);
 
-const posts = await getBlogPosts();
-const categories = Array.from(
-  posts.reduce((categories, post) => {
-    if (post.data.category) {
-      categories.add(post.data.category);
-    }
-    return categories;
-  }, new Set())
-);
+const categories = await getCategories();
+const Container = inline ? Fragment : List;
+const Item = inline ? InlineItem : ListItem;
 ---
 
 <Section title={t("section.categories")}>
@@ -27,6 +30,18 @@ const categories = Array.from(
       )
     }
 
-    {categories.map((tag) => <Link href={`/categories/${tag}`}>{tag}</Link>)}
+    {
+      categories.length > 0 && (
+        <Container>
+          {categories.map((category) => (
+            <Item>
+              <Link href={`/categories/${encodeURIComponent(category)}`}>
+                {category}
+              </Link>
+            </Item>
+          ))}
+        </Container>
+      )
+    }
   </div>
 </Section>
