@@ -53,7 +53,7 @@ And last but not least the timeline is defined as follows. The tooltipe animatio
 
 The result will be something like this.
 
-![All parts together following the layout structure](/lets-build-motion-css/banner.svg)
+![All parts together following the layout structure](/lets-build-motion-css/banner.webp)
 
 ## That's it
 
