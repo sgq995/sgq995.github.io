@@ -1,13 +1,4 @@
-import {
-  createSignal,
-  type Component,
-  Show,
-  onMount,
-  Match,
-  Switch,
-  mergeProps,
-  createEffect,
-} from "solid-js";
+import { createSignal, type Component, onMount, Match, Switch } from "solid-js";
 import { TbMoon, TbSun } from "solid-icons/tb";
 
 export type Theme = "dark" | "light";

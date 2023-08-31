@@ -1,9 +1,9 @@
 import { TbMenu, TbX } from "solid-icons/tb";
 import {
-  Accessor,
-  ParentComponent,
+  type Accessor,
+  type ParentComponent,
   Show,
-  Signal,
+  type Signal,
   children,
   createSignal,
   onCleanup,
