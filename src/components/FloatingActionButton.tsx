@@ -1,4 +1,4 @@
-import { JSX, ParentComponent, children } from "solid-js";
+import { type JSX, type ParentComponent, children } from "solid-js";
 
 export type FloatingActionButtonProps =
   JSX.ButtonHTMLAttributes<HTMLButtonElement> & {

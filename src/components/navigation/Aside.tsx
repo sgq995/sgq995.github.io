@@ -15,7 +15,6 @@ function clickOutside(el: HTMLElement, value: Accessor<Signal<boolean>>) {
   const [visible, setVisible] = value();
 
   const onClick = (event: MouseEvent) => {
-    console.log("directive click", visible());
     if (visible() && !el.contains(event.target as Node | null)) {
       event.stopPropagation();
       event.stopImmediatePropagation();
@@ -96,7 +95,7 @@ const Aside: ParentComponent<AsideProps> = (props) => {
             role="presentation"
             tabIndex={-1}
           >
-            <TbMenu />
+            <TbMenu class="block" />
           </FloatingActionButton>
         </Show>
         <Show when={visible()}>
@@ -105,7 +104,7 @@ const Aside: ParentComponent<AsideProps> = (props) => {
             role="presentation"
             tabIndex={-1}
           >
-            <TbX />
+            <TbX class="block" />
           </FloatingActionButton>
         </Show>
       </Show>
