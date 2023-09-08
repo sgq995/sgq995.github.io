@@ -48,6 +48,6 @@ When you enter the site, a big square is displayed encouraging you to click it o
 
 The user interface to download files is only showing the password field and the download button. It'll download the file and then try to decrypt it using the provided password. The API will receive a field to provide the password to decrypt the file but the password won't be stored in the server.
 
-## Can I suggest something?
+## Do you have any suggestion?
 
-Yes, please. You can reach me on Twitter (now X) [@segoqu95](https://twitter.com/segoqu95). Please provide a link to this post.
+You can reach me on Twitter (now X) [@segoqu95](https://twitter.com/segoqu95). Please provide a link to this post.
