@@ -2,7 +2,7 @@
 title: "Let's build a temporal cloud file storage"
 description: "Easy temporal file sharing tool"
 pubDate: "Aug 04 2023"
-image: "/lets-build-a-temporal-cloud-file-storage/banner.svg"
+image: "/assets/lets-build-a-temporal-cloud-file-storage/banner.svg"
 category: "Side Project"
 tags: ["cloud", "side project", "build in public"]
 isDraft: false

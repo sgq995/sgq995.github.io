@@ -2,7 +2,7 @@
 title: "Let's build Motion CSS"
 description: "A no-code tool for highly performant CSS animations"
 pubDate: "Jul 05 2023"
-image: "/lets-build-motion-css/banner.webp"
+image: "/assets/lets-build-motion-css/banner.webp"
 category: "Side Project"
 tags: ["css", "side project", "build in public"]
 ---
@@ -41,19 +41,19 @@ As a result, a CSS code with all defined animation steps and the name the user s
 
 It's better to define the layout first, so I know where will place every part of the application based on the features defined above.
 
-![The layout mockup, showing a generic box in the center, a timeline at the bottom and controls at the right side above the resulting code](/lets-build-motion-css/layout.svg)
+![The layout mockup, showing a generic box in the center, a timeline at the bottom and controls at the right side above the resulting code](/assets/lets-build-motion-css/layout.svg)
 
 Once the layout is done, the next step is creation of the knobs. The first input is defined as the user shall be able to modify the animation name. Then each one of the properties might be defined [the Blender way](https://docs.blender.org/manual/en/latest/editors/properties_editor.html).
 
-![Begin with the animation name, following by translate field with three inputs for each axis, then scale, rotate and opacity are define as ranges](/lets-build-motion-css/knobs.svg)
+![Begin with the animation name, following by translate field with three inputs for each axis, then scale, rotate and opacity are define as ranges](/assets/lets-build-motion-css/knobs.svg)
 
 And last but not least the timeline is defined as follows. The tooltipe animation will show the user the current percentage of the animation from 0% to 100%. And, the seconds at the end will allow the user to see the preview as the final animation they will run.
 
-![A player button following by a progress bar and the total time at the end](/lets-build-motion-css/timeline.svg)
+![A player button following by a progress bar and the total time at the end](/assets/lets-build-motion-css/timeline.svg)
 
 The result will be something like this.
 
-![All parts together following the layout structure](/lets-build-motion-css/banner.webp)
+![All parts together following the layout structure](/assets/lets-build-motion-css/banner.webp)
 
 ## That's it
 
