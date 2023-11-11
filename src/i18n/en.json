@@ -12,6 +12,8 @@
   "nav.categories": "Categories",
 
   "theme.button": "Switch to $1 theme",
+  "theme.light": "light",
+  "theme.dark": "dark",
 
   "header.blog": "Blog",
 

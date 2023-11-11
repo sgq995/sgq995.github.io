@@ -12,6 +12,8 @@
   "nav.categories": "Categorías",
 
   "theme.button": "Cambiar al tema $1",
+  "theme.light": "claro",
+  "theme.dark": "oscuro",
 
   "header.blog": "Blog",
 

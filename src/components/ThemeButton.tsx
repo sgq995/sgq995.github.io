@@ -65,7 +65,10 @@ export const ThemeButton: Component = () => {
 
   return (
     <button
-      aria-label={t("theme.button", theme() === "light" ? "dark" : "light")}
+      aria-label={t(
+        "theme.button",
+        theme() === "light" ? t("theme.dark") : t("theme.light")
+      )}
       class="rounded-full border border-gray-300 p-2 shadow-lg dark:border-slate-800 dark:bg-slate-700 dark:shadow-slate-800"
       onClick={handleButtonClick}
     >
