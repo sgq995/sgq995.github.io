@@ -5,7 +5,7 @@ export type Theme = "dark" | "light";
 
 export const ThemeButton: Component = () => {
   const initialTheme: Theme =
-    (localStorage.getItem("theme") as Theme) ?? "light";
+    (localStorage?.getItem("theme") as Theme) ?? "light";
   const [theme, setTheme] = createSignal<Theme>(initialTheme);
 
   const setUserTheme = (theme: Theme) => {
