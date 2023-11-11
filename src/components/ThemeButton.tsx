@@ -1,14 +1,20 @@
 import { createSignal, type Component, onMount, Match, Switch } from "solid-js";
 import { TbMoon, TbSun } from "solid-icons/tb";
+import { isServer } from "solid-js/web";
 
 export type Theme = "dark" | "light";
 
 export const ThemeButton: Component = () => {
-  const initialTheme: Theme =
-    (localStorage?.getItem("theme") as Theme) ?? "light";
+  const initialTheme: Theme = isServer
+    ? "light"
+    : (localStorage?.getItem("theme") as Theme) ?? "light";
   const [theme, setTheme] = createSignal<Theme>(initialTheme);
 
   const setUserTheme = (theme: Theme) => {
+    if (isServer) {
+      return;
+    }
+
     if (theme === "light") {
       document.documentElement.classList.add("light");
       document.documentElement.classList.remove("dark");
