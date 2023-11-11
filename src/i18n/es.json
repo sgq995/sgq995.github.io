@@ -11,6 +11,8 @@
   "nav.tags": "Etiquetas",
   "nav.categories": "Categorías",
 
+  "theme.button": "Cambiar al tema $1",
+
   "header.blog": "Blog",
 
   "social.github": "Visita mi perfil en Github",

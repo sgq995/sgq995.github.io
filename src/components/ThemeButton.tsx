@@ -1,8 +1,20 @@
 import { createSignal, type Component, onMount, Match, Switch } from "solid-js";
 import { TbMoon, TbSun } from "solid-icons/tb";
 import { isServer } from "solid-js/web";
+import {
+  defaultLang,
+  getLangFromUrl,
+  getTransalations,
+  type Locale,
+} from "../i18n";
 
 export type Theme = "dark" | "light";
+
+let lang: Locale = defaultLang;
+if (!isServer) {
+  lang = getLangFromUrl(new URL(location.origin));
+}
+const t = getTransalations(lang);
 
 export const ThemeButton: Component = () => {
   const initialTheme: Theme = isServer
@@ -53,6 +65,7 @@ export const ThemeButton: Component = () => {
 
   return (
     <button
+      aria-label={t("theme.button", theme() === "light" ? "dark" : "light")}
       class="rounded-full border border-gray-300 p-2 shadow-lg dark:border-slate-800 dark:bg-slate-700 dark:shadow-slate-800"
       onClick={handleButtonClick}
     >

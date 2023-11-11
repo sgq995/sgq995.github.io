@@ -11,6 +11,8 @@
   "nav.tags": "Tags",
   "nav.categories": "Categories",
 
+  "theme.button": "Switch to $1 theme",
+
   "header.blog": "Blog",
 
   "social.github": "Visit my Github profile",

@@ -22,7 +22,11 @@ export function getLangFromUrl(url: URL) {
 }
 
 export function getTransalations(lang: Locale) {
-  return function t(key: LocaleKey) {
-    return locales[lang][key] ?? locales[defaultLang][key] ?? key;
+  return function t(key: LocaleKey, ...args: string[]) {
+    let text = locales[lang][key] ?? locales[defaultLang][key] ?? key;
+    for (let i = 0; i < args.length; ++i) {
+      text = text.replaceAll(new RegExp(`\\$${i + 1}`, "g"), args[i]);
+    }
+    return text;
   };
 }
